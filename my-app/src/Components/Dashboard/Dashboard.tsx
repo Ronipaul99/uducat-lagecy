@@ -266,15 +266,15 @@ const Dashboard = () => {
                             <div className="one">
                                 <PaymentsRoundedIcon className='icon' />
                                 <div className="amount">
-                                    <p className='normal'>Monthly earning</p>
-                                    <h1 className='bold'>₹30,000</h1>
+                                    <p className='normal'>Yearly earning</p>
+                                    <h1 className='bold'>₹306,000</h1>
                                 </div>
                             </div>
                             <div className="one">
                                 <PaymentsRoundedIcon className='icon' />
                                 <div className="amount">
-                                    <p className='normal'>Monthly earning</p>
-                                    <h1 className='bold'>₹30,000</h1>
+                                    <p className='normal'>Total earning</p>
+                                    <h1 className='bold'>₹306,000</h1>
                                 </div>
                             </div>
                         </div>
