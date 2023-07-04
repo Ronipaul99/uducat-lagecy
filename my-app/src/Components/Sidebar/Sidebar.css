@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.li button:active {
+    background: rgb(255, 255, 255);
+}
+
+.li button:focus {
+    background: #7B30C0;
+    color: #ffffff;
+}
+
+.main .li,
+li {
+    list-style-type: none;
+}
+
+.main {
+    height: 89.8vh;
+    width: 240px;
+    margin: 0;
+    left: 0;
+    padding: 0;
+}
+
+.li {
+    display: flex;
+    flex-direction: column;
+}
+
+.li button {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    border: none;
+    color: #40558A;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+    background: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width:900px) {
+    .main {
+        display: none;
+    }
+}
