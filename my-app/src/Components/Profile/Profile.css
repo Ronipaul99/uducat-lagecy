@@ -131,7 +131,7 @@
     color: #000000;
 }
 
-.certificate .card {
+.certificate .card12 {
     display: flex;
     justify-content: space-between;
     /* width: 350px; */
@@ -139,7 +139,7 @@
     border-radius: 25px;
 }
 
-.certificate .card .first {
+.certificate .card12 .first {
     display: flex;
     padding: 1rem;
     width: 100%;
@@ -150,11 +150,11 @@
     align-items: center;
 }
 
-.certificate .card .first .ico1 {
+.certificate .card12 .first .ico1 {
     font-size: 50px;
 }
 
-.certificate .card :hover {
+.certificate .card12 :hover {
     background-color: rgb(226, 226, 226);
     border-radius: 25px;
 }

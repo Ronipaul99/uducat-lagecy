@@ -78,7 +78,7 @@ const Profile = () => {
                     <Carousel cols={3}>
                         {certificate.map((course, index) => (
                             <Carousel.Item key={index}>
-                                <div className="card">
+                                <div className="card12">
                                     <div className="first"><MilitaryTechOutlinedIcon className='ico1' sx={{ fontSize: "35px" }} /><p>{course.name}</p>< VerifiedIcon className='book' sx={{ fontSize: "45px" }} />
                                     </div>
                                 </div>
