@@ -150,6 +150,10 @@
     align-items: center;
 }
 
+.certificate .card .first .ico1 {
+    font-size: 50px;
+}
+
 .certificate .card :hover {
     background-color: rgb(226, 226, 226);
     border-radius: 25px;
@@ -434,7 +438,8 @@
     box-shadow: 0 5px 10px #cccccc;
     position: relative;
 }
- .profiledetailss .upper {
+
+.profiledetailss .upper {
     display: flex;
     gap: 2rem;
     border-radius: 25px;
@@ -443,7 +448,8 @@
     display: flex;
     align-items: center;
 }
- .profiledetailss .ico1 {
+
+.profiledetailss .ico1 {
     position: absolute;
     right: 0;
     top: 0;
@@ -452,6 +458,7 @@
     margin: 1rem;
     padding: 1rem;
 }
+
 .message h1 {
     font-size: 22px;
     font-weight: 600;
@@ -544,6 +551,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
     }
+
     .subvid .left {
         display: flex;
         flex-direction: column;
@@ -553,11 +561,11 @@
         padding: 0;
         margin: 0;
     }
-    
+
 }
 
 @media screen and (max-width:500px) {
     .profiledetailss .upper {
-       flex-wrap: wrap;
+        flex-wrap: wrap;
     }
 }
