@@ -471,6 +471,13 @@
     margin-top: .2rem;
 }
 
+.message h6 {
+    font-size: 15px;
+    color: #BEBABA;
+    margin-top: .2rem;
+    font-weight: 400;
+}
+
 
 .full1 {
     position: relative;

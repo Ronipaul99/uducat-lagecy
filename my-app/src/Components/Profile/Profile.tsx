@@ -220,6 +220,7 @@ const Profile = () => {
                                         </div>
                                         <div className="message">
                                             <h1>Biswarup Kundu</h1>
+                                            <h6>Student</h6>
                                             <Rating name="read-only" sx={{ mt: 1 }} value={value} readOnly />
                                             <p>Biswarup Kundu is a passionate and dedicated educator with over 10 years of teaching experience. He believes that education is the key to unlocking the potential in every student and strives to create a positive and inclusive learning environment where all students can thrive.</p>
                                         </div>
@@ -243,6 +244,7 @@ const Profile = () => {
                                             </div>
                                             <div className="message">
                                                 <h1>Biswarup Kundu</h1>
+                                                <h6>Student</h6>
                                                 <Rating name="read-only" sx={{ mt: 1 }} value={value} readOnly />
                                                 <p>Biswarup Kundu is a passionate and dedicated educator with over 10 years of teaching experience. He believes that education is the key to unlocking the potential in every student and strives to create a positive and inclusive learning environment where all students can thrive.</p>
                                             </div>
@@ -266,6 +268,7 @@ const Profile = () => {
                                             </div>
                                             <div className="message">
                                                 <h1>Biswarup Kundu</h1>
+                                                <h6>Student</h6>
                                                 <Rating name="read-only" sx={{ mt: 1 }} value={value} readOnly />
                                                 <p>Biswarup Kundu is a passionate and dedicated educator with over 10 years of teaching experience. He believes that education is the key to unlocking the potential in every student and strives to create a positive and inclusive learning environment where all students can thrive.</p>
                                             </div>
