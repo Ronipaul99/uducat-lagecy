@@ -524,6 +524,16 @@
         padding: 0;
     }
 
+    .profiledetailss .ico1 {
+        position: absolute;
+        right: 0;
+        top: 35%;
+        color: #ff478e;
+        font-size: 70px;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
     .full {
         margin-top: 2rem;
     }
