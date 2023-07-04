@@ -85,7 +85,6 @@
 .text p {
     color: #0D0D0E;
     font-size: 30px;
-    font-family: SF Pro Display;
     font-weight: 500;
     letter-spacing: 1.5px;
 }
@@ -93,7 +92,6 @@
 .text1 p {
     color: #0D0D0E;
     font-size: 25px;
-    font-family: SF Pro Display;
     font-weight: 500;
     letter-spacing: 1.5px;
 }
@@ -101,7 +99,6 @@
 .text2 p {
     color: #0D0D0E;
     font-size: 25px;
-    font-family: SF Pro Display;
     font-weight: 500;
     letter-spacing: 1.5px;
 }
@@ -128,7 +125,6 @@
 .firstdiv .header1 {
     color: #000;
     font-size: 22px;
-    font-family: Montserrat;
     font-weight: 600;
     letter-spacing: 0.5px;
     padding-bottom: 2rem;
@@ -168,16 +164,14 @@
 .number1 .bold {
     color: #444CE7;
     font-size: 45px;
-    font-family: Montserrat;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
 .number1 .normal {
     font-size: 24px;
-    line-height: 38px;
+    line-height: 44px;
     color: #161616;
-    font-family: Montserrat;
     font-weight: 500;
     letter-spacing: 0.5px;
 }
@@ -185,7 +179,6 @@
 .number3 .bold {
     color: #444CE7;
     font-size: 40px;
-    font-family: Montserrat;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -193,7 +186,6 @@
 .number3 .normal {
     font-size: 21px;
     color: #161616;
-    font-family: Montserrat;
     font-weight: 500;
     letter-spacing: 0.5px;
 }
@@ -214,7 +206,6 @@
 .cardheader {
     color: #121111;
     font-size: 18px;
-    font-family: Montserrat;
     font-weight: 500;
     line-height: 22px;
     letter-spacing: 0.5px;
@@ -360,7 +351,6 @@
     justify-content: flex-start;
     color: #000;
     font-size: 21px;
-    font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
     line-height: 22px;
@@ -511,9 +501,10 @@
 .rightcolumn li {
     display: flex;
     align-items: center;
+    padding: 1rem;
 }
 
-.right {
+.side .right {
     border-left: 2px dotted rgb(136, 136, 136);
     padding: 1rem;
 }
@@ -551,7 +542,6 @@
 .number4 .bold {
     font-size: 25px;
     color: #7B30C0;
-    font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     line-height: 16px;
@@ -562,7 +552,6 @@
 .number4 .normal {
     color: #000;
     font-size: 15px;
-    font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
     line-height: 25px;
@@ -572,7 +561,6 @@
 .number4 .normal1 {
     color: #000;
     font-size: 11px;
-    font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
@@ -633,7 +621,6 @@ input {
     &::placeholder {
         color: rgba(123, 117, 117, 0.87);
         font-size: 15px;
-        font-family: Roboto;
         line-height: 20px;
         letter-spacing: 0.5px;
     }
@@ -733,7 +720,7 @@ input {
         align-items: center;
     }
 
-    .right {
+    .side .right{
         border-left: none;
         border-top: 2px dotted rgb(136, 136, 136);
     }

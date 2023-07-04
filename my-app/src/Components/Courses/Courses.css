@@ -1,4 +1,4 @@
-.card {
+.course .card {
     background: #fff;
     box-shadow: 0 5px 10px #d8d8d8;
     border-radius: 15px;
@@ -56,7 +56,7 @@
 }
 
 .name .normal {
-    font-size: 12px;
+    font-size: 14px;
     color: rgb(114, 114, 114);
 }
 

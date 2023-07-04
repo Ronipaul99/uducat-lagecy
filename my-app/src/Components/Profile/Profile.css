@@ -1,0 +1,563 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #F1F5FB;
+}
+
+.profilefull {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profiledetails {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 25px;
+    background: linear-gradient(0deg, #6161F1 0%, #FDF7F4 100%);
+    height: max-content;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.full {
+    position: relative;
+    height: 190px;
+}
+
+.image {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 170px;
+    width: 170px;
+    border: 10px solid white;
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.image .edit {
+    color: #444CE7;
+    position: absolute;
+    right: 7%;
+    bottom: 2%;
+    background: white;
+    border-radius: 50%;
+    padding: .5rem;
+}
+
+.upper .details {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+
+.details h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+.details p {
+    font-size: 20px;
+    color: black;
+    margin-top: 1rem;
+}
+
+.profile .profiledetails .ico {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: white;
+    color: #444CE7;
+    border-radius: 50%;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.profile .profiledetails .upper {
+    display: flex;
+    gap: 2rem;
+    border-radius: 25px;
+    height: max-content;
+    flex-wrap: wrap;
+    padding: 2rem 5rem;
+}
+
+.book {
+    color: #444CE7;
+    font-size: 35px;
+}
+
+.profile .profiledetails .lower {
+    display: flex;
+    padding: 0rem 5rem 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.profile .profiledetails .lower .first {
+    display: flex;
+    padding: .7rem 2rem;
+    background: white;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.first h1 {
+    font-size: 35px;
+    font-weight: bold;
+    color: #444CE7;
+}
+
+.first p {
+    font-size: 17px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.certificate .card {
+    display: flex;
+    justify-content: space-between;
+    /* width: 350px; */
+    background: white;
+    border-radius: 25px;
+}
+
+.certificate .card .first {
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    /* gap: 1rem; */
+    justify-content: space-between;
+    border-top: 3px solid #4CCDA1;
+    border-radius: 25px;
+    align-items: center;
+}
+
+.certificate .card :hover {
+    background-color: rgb(226, 226, 226);
+    border-radius: 25px;
+}
+
+.certificate {
+    width: 90%;
+    padding: 2rem;
+}
+
+.top {
+    padding: 2rem 0rem 0rem 5rem;
+}
+
+.top p {
+    font-size: 25px;
+    color: black;
+    font-weight: 600;
+}
+
+.certificatemain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Educationaldetails {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.Educationaldetails .main {
+    width: 87%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    background: white;
+    border-radius: 25px;
+    align-items: center;
+    padding: 2rem;
+}
+
+.Educationaldetails .sub {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.Educationaldetails .sub .card {
+    display: flex;
+    padding: 2rem;
+    max-width: 320px;
+    border-top: 10px solid #444CE7;
+    box-shadow: 0 5px 10px #d8d8d8;
+    flex-direction: column;
+    background: white;
+    border-radius: 25px;
+    justify-content: space-between;
+}
+
+.Educationaldetails .sub .card .box {
+    display: flex;
+    flex-direction: column;
+}
+
+.Educationaldetails .sub .card .low button {
+    padding: .7rem 2rem;
+    background: #7B30C0;
+    color: white;
+    border: none;
+    width: max-content;
+    margin-top: 2rem;
+}
+
+.box li {
+    display: flex;
+    gap: .8rem;
+    margin-top: 1rem;
+}
+
+.low {
+    display: flex;
+    flex-direction: column;
+}
+
+.low .line {
+    background: #444CE5B2;
+    height: 12px;
+    border-radius: 25px;
+    width: 230px;
+    margin-top: 1rem;
+}
+
+.box .icon {
+    font-size: 21px;
+    color: #D9D9D9;
+}
+
+.Educationaldetails .sub .card .bold {
+    font-size: 22px;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 2rem;
+}
+
+.box p {
+    font-size: 16px;
+    color: #636161;
+    font-weight: 400;
+}
+
+.profile .video {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.video .subvid {
+    width: 91%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subvid .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+}
+
+.subvid .left .upper {
+    width: 90%;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 1rem 1rem 0 0;
+    position: relative;
+}
+
+.subvid .left .upper .play {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 60px;
+    color: #7B30C0;
+    background: white;
+    border-radius: 50%;
+}
+
+.subvid .left .upper .time {
+    position: absolute;
+    top: 11%;
+    left: 8%;
+    font-size: 60px;
+    color: #000000;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.subvid .left .upper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.subvid .left .lower {
+    padding: 4rem 1rem;
+    display: flex;
+    gap: 2rem;
+    width: fit-content;
+    margin-top: 2rem;
+}
+
+.lower .pie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 170px;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+}
+
+.pie .tag1 {
+    padding: 0 1rem 0;
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    z-index: 100;
+    color: #000000;
+    font-weight: bold;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0.486), rgba(219, 219, 219, 0.829));
+}
+
+.pie .tag2 {
+    position: absolute;
+    bottom: 10%;
+    z-index: 100;
+    right: 4%;
+    padding: 0 1rem 0;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    color: #000000;
+    font-weight: bold;
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0.486), rgba(219, 219, 219, 0.829));
+}
+
+.lower .like {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.like .icon1 {
+    font-size: 25px;
+    color: #ffffff;
+    background: #7B30C0;
+    border-radius: 50%;
+    padding: .7rem;
+}
+
+
+.like .icon2 {
+    font-size: 25px;
+    padding: .7rem;
+    color: #ffffff;
+    background: #6161F1;
+    border-radius: 50%;
+    margin-top: 1.2rem;
+}
+
+.subvid .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 25px;
+}
+
+
+
+.subvid .right .first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    padding: 1rem;
+}
+
+.first .profilefull .profiledetails .message {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+
+
+
+/*  */
+.profiledetailss {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0 5px 10px #cccccc;
+    position: relative;
+}
+ .profiledetailss .upper {
+    display: flex;
+    gap: 2rem;
+    border-radius: 25px;
+    height: max-content;
+    padding: 2rem 2rem;
+    display: flex;
+    align-items: center;
+}
+ .profiledetailss .ico1 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #ff478e;
+    font-size: 70px;
+    margin: 1rem;
+    padding: 1rem;
+}
+.message h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: black;
+}
+
+.message p {
+    font-size: 15px;
+    color: black;
+    margin-top: .2rem;
+}
+
+
+.full1 {
+    position: relative;
+    height: 120px;
+}
+
+.imagee {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+    border: 10px solid rgb(240, 240, 240);
+}
+
+.imagee img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+@media screen and (max-width:1191px) {
+    .profile .profiledetails .lower .first {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width:985px) {
+    .profile .profiledetails .lower {
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+
+@media screen and (max-width:900px) {
+    .profile .profiledetails .upper {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .profile .profiledetails .upper {
+        padding: 0;
+    }
+
+    .full {
+        margin-top: 2rem;
+    }
+
+    .upper .details {
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:1533px) {
+    .profile .profiledetails .lower .first {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width:1141px) {
+    .Educationaldetails .sub {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width:1246px) {
+    .video .subvid {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .subvid .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+}
+
+@media screen and (max-width:500px) {
+    .profiledetailss .upper {
+       flex-wrap: wrap;
+    }
+}

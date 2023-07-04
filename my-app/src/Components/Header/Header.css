@@ -90,11 +90,11 @@ input {
     display: flex;
 }
 
-.icon1 {
+.icons .icon1 {
     padding: 1rem;
 }
 
-.icon2 {
+.icons .icon2 {
     padding: 1rem 2rem 1rem 1rem;
 }
 
@@ -109,21 +109,21 @@ input {
     align-items: center;
 }
 
-.user,
+.user
 h1 {
     color: rgba(64, 85, 138, 0.87);
     font-size: 20px;
-    font-family: Roboto;
+    /* font-family: Roboto ; */
     font-weight: 500;
     letter-spacing: 0.15px;
     margin: 0;
 }
 
-.user,
+.user
 p {
     color: var(--black-medium-emphasis, rgba(0, 0, 0, 0.60));
     font-size: 11px;
-    font-family: Roboto;
+    /* font-family: Roboto ; */
     letter-spacing: 0.25px;
     margin: 0;
 }
