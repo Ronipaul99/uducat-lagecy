@@ -711,7 +711,7 @@ input {
         justify-content: space-between;
         gap: 2rem;
         width: 92%;
-        flex-wrap: nowrap;
+        /* flex-wrap: nowrap; */
     }
 
 
@@ -752,4 +752,16 @@ input {
     .subdiv .head .search {
         margin-bottom: 2rem;
     }
+}
+
+@media screen and (max-width:1518px) {
+
+    .flex1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    
 }
