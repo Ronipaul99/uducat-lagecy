@@ -252,7 +252,7 @@ const Dashboard = () => {
             </div>
             <div className="div">
 
-                <div className="div1">
+                <div className="div1graph">
 
                     <div className="st2">
                         <div className="earning">
