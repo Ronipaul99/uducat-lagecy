@@ -264,6 +264,12 @@
 }
 
 
+.div1graph {
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+    flex-wrap: wrap;
+}
 .div1 {
     display: flex;
     justify-content: space-between;
