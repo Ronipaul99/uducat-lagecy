@@ -296,7 +296,7 @@ const Dashboard = () => {
 
                         <LineChart
                             width={700}
-                            height={500}
+                            height={450}
                             data={data1}
                             syncId="anyId"
                             margin={{
