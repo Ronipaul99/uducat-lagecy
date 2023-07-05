@@ -772,3 +772,18 @@ input {
         border-top: 2px dotted rgb(136, 136, 136);
     }
 }
+
+@media screen and (min-width:1418px) {
+
+    .side .right {
+        border-left: none;
+        border-top: 2px dotted rgb(136, 136, 136);
+    }
+}
+
+@media screen and (min-width:1500px) {
+    .side .right {
+        border-left: 2px dotted rgb(136, 136, 136);
+        border-top: none;
+    }
+}
