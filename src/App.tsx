@@ -3,6 +3,7 @@ import Header from './Components/Header/Header';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Dashboard from './Components/Dashboard/Dashboard';
 import { Grid } from '@mui/material';
+import Profile from './Components/Profile/Profile';
 
 function App() {
   return (
@@ -17,8 +18,7 @@ function App() {
             <Routes>
 
               <Route path="/" element={<Dashboard />} />
-              {/* <Route path="/" element={<Sidebar />} /> */}
-
+              <Route path="/profile" element={<Profile />} />
             </Routes>
           </Grid>
         </Grid>
