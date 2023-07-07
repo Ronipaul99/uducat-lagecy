@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.schedule {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #F1F5FB;
+    height: 100%;
+}
+
+.schedule .title {
+    font-size: 25px;
+    padding: 2rem 2rem 2rem 4rem;
+    font-weight: 500;
+}
+
+.timefull {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.timefull .timefit {
+    width: 92%;
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.timefull .timefit .date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* box-shadow: 0 5px 10px #d8d8d8; */
+    background: white;
+    width: fit-content;
+    border-radius: 15px;
+    padding: .5rem;
+    padding: .4rem 8rem .4rem 1rem;
+}
+
+.timefull .timefit .time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* box-shadow: 0 5px 10px #d8d8d8; */
+    background: white;
+    width: fit-content;
+    border-radius: 15px;
+    padding: .4rem 8rem .4rem 1rem;
+}
+
+.timefull .timefit .time .num {
+    display: flex;
+    gap: .8rem;
+    margin-top: .3rem;
+}
+
+.timefull .timefit .time .num .t {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.timefull .timefit .date .num .t {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.timefull .timefit .date .num {
+    display: flex;
+    gap: .8rem;
+    margin-top: .3rem;
+}
+
+.timefull .timefit .date .num .icon {
+    font-size: 20px;
+    color: #7B30C0;
+}
+
+.timefull .timefit .date p {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.timefull .timefit .time .num .icon {
+    font-size: 20px;
+    color: #7B30C0;
+}
+
+.timefull .timefit .time p {
+    font-size: 13px;
+    font-weight: 500;
+
+}
+
+/* tabs */
+.tabfull {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.tabfull .joint {
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabfull .joint .tabfit {
+    width: 100%;
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    border-bottom: 3px solid #D7D7D7;
+}
+
+
+.tabfull .tabfit button {
+    background: none;
+    border: none;
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+    height: 50px;
+}
+
+.tabfit button:active {
+    background: rgb(255, 255, 255);
+}
+
+.tabfit button:focus {
+    border-bottom: 3px solid #444CE7;
+}
+
+
+.schedulehead .header12 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0rem .3rem;
+}
+
+.schedulehead .header12 .one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.schedulehead .header12 .two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.schedulehead .header12 .three {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.schedulehead .header12 .four {
+    width: 12%;
+}
+
+
+.schedulehead .header12 .one p {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.schedulehead .header12 .one .icon {
+    font-size: 24px;
+    color: #292D32;
+    background: #4CCDA161;
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+
+.schedulehead .header12 .two p {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.schedulehead .header12 .two .icon {
+    font-size: 24px;
+    color: #292D32;
+    background: #4CCDA161;
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+
+.schedulehead .header12 .three p {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.schedulehead .header12 .three .icon {
+    font-size: 24px;
+    color: #292D32;
+    background: #4CCDA161;
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+.map {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.map .class {
+    display: flex;
+    flex-direction: column;
+}
+
+.map .class .flex14 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.map .class .flex14 .num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+}
+
+.map .class .flex14 .num .icon {
+    font-size: 18px;
+}
+
+.map .class .flex14 .num .t {
+    font-size: 12px;
+}
+
+.class .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-radius: 15px;
+    padding: 1.2rem;
+
+}
+
+.class .details .title {
+    font-size: 18px;
+    color: #636161;
+    font-style: normal;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    width: 17%;
+
+}
+
+.class .details .id {
+    font-size: 18px;
+    color: #636161;
+    font-style: normal;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    width: 17%;
+
+}
+
+.class .details .student {
+    font-size: 18px;
+    color: #636161;
+    font-style: normal;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+
+}
+
+.class .details .btn {
+    display: flex;
+}
+
+.class .details .btn button {
+    background: #444CE7;
+    color: white;
+    border-radius: 20px;
+    padding: .5rem 1.5rem;
+    border: none;
+}
+
+
+
+
+@media screen and (max-width:730px) {
+
+    .timefull .timefit .date {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        /* box-shadow: 0 5px 10px #d8d8d8; */
+        background: white;
+        width: fit-content;
+        border-radius: 15px;
+        padding: .5rem;
+        width: 100%;
+    }
+
+    .timefull .timefit .time {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        /* box-shadow: 0 5px 10px #d8d8d8; */
+        background: white;
+        width: fit-content;
+        border-radius: 15px;
+        width: 100%;
+    }
+
+    .schedule .title {
+        font-size: 20px;
+        padding: 2rem 2rem 2rem 4rem;
+        font-weight: 500;
+    }
+
+    .tabfull .tabfit button {
+        background: none;
+        border: none;
+        color: black;
+        font-weight: bold;
+        font-size: 11px;
+        height: 30px;
+    }
+
+    .schedulehead .header12 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 0rem 0rem;
+    }
+
+    .schedulehead .header12 .one {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .4rem;
+    }
+
+    .schedulehead .header12 .two {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .4rem;
+    }
+
+    .schedulehead .header12 .three {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .4rem;
+    }
+
+    .schedulehead .header12 .four {
+        width: 20%;
+    }
+
+
+    .schedulehead .header12 .one p {
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    .schedulehead .header12 .one .icon {
+        font-size: 13px;
+        color: #292D32;
+        background: #4CCDA161;
+        padding: .3rem;
+        border-radius: 50%;
+    }
+
+
+    .schedulehead .header12 .two p {
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    .schedulehead .header12 .two .icon {
+        font-size: 13px;
+        color: #292D32;
+        background: #4CCDA161;
+        padding: .3rem;
+        border-radius: 50%;
+    }
+
+
+    .schedulehead .header12 .three p {
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    .schedulehead .header12 .three .icon {
+        font-size: 13px;
+        color: #292D32;
+        background: #4CCDA161;
+        padding: .3rem;
+        border-radius: 50%;
+    }
+
+    .map {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .map .class {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map .class .flex14 {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: .5rem;
+        gap: .5rem;
+    }
+
+    .map .class .flex14 .num {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .3rem;
+    }
+
+    .map .class .flex14 .num .icon {
+        font-size: 13px;
+    }
+
+    .map .class .flex14 .num .t {
+        font-size: 8px;
+    }
+
+    .class .details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: white;
+        border-radius: 15px;
+        padding: 1rem;
+
+    }
+
+    .class .details .title {
+        font-size: 11px;
+        color: #636161;
+        font-style: normal;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+        width: 17%;
+
+    }
+
+    .class .details .id {
+        font-size: 11px;
+        color: #636161;
+        font-style: normal;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+        width: 17%;
+
+    }
+
+    .class .details .student {
+        font-size: 11px;
+        color: #636161;
+        font-style: normal;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+
+    }
+
+    .class .details .btn {
+        display: flex;
+    }
+
+    .class .details .btn button {
+        background: #444CE7;
+        color: white;
+        border-radius: 20px;
+        padding: .3rem .5rem;
+        border: none;
+        font-size: 8px;
+    }
+
+}
