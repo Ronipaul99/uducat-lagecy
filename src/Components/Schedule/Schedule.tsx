@@ -86,21 +86,23 @@ const Schedule = () => {
             <div className="map">
               {classData.map((data, key) => (
                 <div key={key} className="class">
-                  <div className="flex14">
-                    <div className="num">
-                      <CalendarMonthIcon className='icon' />
-                      <p className='t'> {data.Date}</p>
-                    </div>
-                    <div className="num">
-                      <AccessTimeIcon className='icon' />
-                      <p className='t'>{data.Time}</p>
-                    </div>
-                  </div>
                   <div className="details">
-                    <div className="title">{data.ClassTitle}</div>
-                    <div className="id">{data.ClassID}</div>
-                    <div className="student">{data.EnrollStudents}</div>
-                    <div className="btn"><button>Star class</button></div>
+                    <div className="row">
+                      <div className="title">{data.ClassTitle}</div>
+                      <div className="id">{data.ClassID}</div>
+                      <div className="student">{data.EnrollStudents}</div>
+                      <div className="btn"><button>Star class</button></div>
+                    </div>
+                    <div className="flex14">
+                      <div className="num">
+                        <CalendarMonthIcon className='icon' />
+                        <p className='t'> {data.Date}</p>
+                      </div>
+                      <div className="num">
+                        <AccessTimeIcon className='icon' />
+                        <p className='t'>{data.Time}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 

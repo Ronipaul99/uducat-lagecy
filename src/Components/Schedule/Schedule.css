@@ -178,7 +178,7 @@
 
 .schedulehead .header12 .one .icon {
     font-size: 24px;
-    color: #292D32;
+    color: #ffffff;
     background: #4CCDA161;
     padding: .5rem;
     border-radius: 50%;
@@ -192,8 +192,8 @@
 
 .schedulehead .header12 .two .icon {
     font-size: 24px;
-    color: #292D32;
-    background: #4CCDA161;
+    color: #ffffff;
+    background: #EA4C89;
     padding: .5rem;
     border-radius: 50%;
 }
@@ -206,8 +206,8 @@
 
 .schedulehead .header12 .three .icon {
     font-size: 24px;
-    color: #292D32;
-    background: #4CCDA161;
+    color: #ffffff;
+    background: #444CE7;
     padding: .5rem;
     border-radius: 50%;
 }
@@ -217,45 +217,54 @@
     margin-bottom: 2rem;
 }
 
-.map .class {
+.map .class .details {
     display: flex;
     flex-direction: column;
+    margin: 2rem 0;
 }
 
-.map .class .flex14 {
+.map .class .details .flex14 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 1.5rem;
     gap: 1rem;
+    padding: .2rem;
 }
 
-.map .class .flex14 .num {
+.map .class .details .flex14 .num {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: .3rem;
 }
 
-.map .class .flex14 .num .icon {
+.map .class .details .flex14 .num .icon {
     font-size: 18px;
 }
 
-.map .class .flex14 .num .t {
+.map .class .details .flex14 .num .t {
     font-size: 12px;
+    margin: 0;
+    padding: 0;
 }
 
 .class .details {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     background: white;
     border-radius: 15px;
-    padding: 1.2rem;
+    padding: 1rem;
+
+}
+.class .details .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 
 }
 
-.class .details .title {
+.class .details .row .title {
     font-size: 18px;
     color: #636161;
     font-style: normal;
@@ -266,7 +275,7 @@
 
 }
 
-.class .details .id {
+.class .details .row .id {
     font-size: 18px;
     color: #636161;
     font-style: normal;
@@ -277,7 +286,7 @@
 
 }
 
-.class .details .student {
+.class .details .row .student {
     font-size: 18px;
     color: #636161;
     font-style: normal;
@@ -287,11 +296,11 @@
 
 }
 
-.class .details .btn {
+.class .details .row .btn {
     display: flex;
 }
 
-.class .details .btn button {
+.class .details .row .btn button {
     background: #444CE7;
     color: white;
     border-radius: 20px;
@@ -384,7 +393,7 @@
 
     .schedulehead .header12 .one .icon {
         font-size: 13px;
-        color: #292D32;
+        color: #ffffff;
         background: #4CCDA161;
         padding: .3rem;
         border-radius: 50%;
@@ -398,8 +407,9 @@
 
     .schedulehead .header12 .two .icon {
         font-size: 13px;
-        color: #292D32;
-        background: #4CCDA161;
+        color: #ffffff;
+        background: #EA4C89;
+        ;
         padding: .3rem;
         border-radius: 50%;
     }
@@ -412,8 +422,8 @@
 
     .schedulehead .header12 .three .icon {
         font-size: 13px;
-        color: #292D32;
-        background: #4CCDA161;
+        color: #ffffff;
+        background: #444CE7;
         padding: .3rem;
         border-radius: 50%;
     }
@@ -423,12 +433,12 @@
         margin-bottom: 2rem;
     }
 
-    .map .class {
+    .map .class .details {
         display: flex;
         flex-direction: column;
     }
 
-    .map .class .flex14 {
+    .map .class .details .flex14 {
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -436,32 +446,31 @@
         gap: .5rem;
     }
 
-    .map .class .flex14 .num {
+    .map .class  .details.flex14 .num {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: .3rem;
     }
 
-    .map .class .flex14 .num .icon {
+    .map .class .details .flex14 .num .icon {
         font-size: 13px;
     }
 
-    .map .class .flex14 .num .t {
+    .map .class .details .flex14 .num .t {
         font-size: 8px;
     }
 
-    .class .details {
+    .class .details .row{
         display: flex;
         align-items: center;
         justify-content: space-between;
         background: white;
         border-radius: 15px;
-        padding: 1rem;
 
     }
 
-    .class .details .title {
+    .class .details .row .title {
         font-size: 11px;
         color: #636161;
         font-style: normal;
@@ -472,7 +481,7 @@
 
     }
 
-    .class .details .id {
+    .class .details .row .id {
         font-size: 11px;
         color: #636161;
         font-style: normal;
@@ -483,7 +492,7 @@
 
     }
 
-    .class .details .student {
+    .class .details .row .student {
         font-size: 11px;
         color: #636161;
         font-style: normal;
@@ -493,11 +502,11 @@
 
     }
 
-    .class .details .btn {
+    .class .details .row .btn {
         display: flex;
     }
 
-    .class .details .btn button {
+    .class .details .row .btn button {
         background: #444CE7;
         color: white;
         border-radius: 20px;
