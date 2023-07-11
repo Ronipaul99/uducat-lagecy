@@ -98,6 +98,14 @@
 
 }
 
+.times .time .colorMonth {
+    color: #4ccda1;
+    margin-left: .5rem;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
 /* tabs */
 .tabfull {
     width: 100%;
@@ -313,20 +321,97 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: red;
+    margin-top: 3rem;
 }
 
-.secondTab .calender{
+.secondTab .calender {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.secondTab .calender .leftc{
+.secondTab .calender .leftc {
     background: white;
     border-radius: 15px;
-    height: 100%;
+    height: fit-content;
 }
 
+.secondTab .calender .leftc .mainc {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.mainc .time {
+    display: flex;
+}
+
+.mainc .time .dropdown {
+    padding: .3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background: #DCEEFF;
+}
+
+.mainc .time .dropdown .icon {
+    font-size: 19px;
+    color: #40558A;
+}
+
+.time .dropdown select {
+    border: none;
+    background: none;
+    color: #40558A;
+}
+
+.mainc .time .times {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.mainc .time .times .time {
+    display: flex;
+    margin-left: 1rem;
+    align-items: center;
+
+}
+
+.mainc .time .times .time p {
+    margin-left: 1rem;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+}
+
+.mainc .time .times .button button {
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    border-radius: 15px;
+    border: 1px solid #7B30C0;
+    padding: .5rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    align-items: center;
+    background: none;
+}
+
+.mainc .time .times .button .icon {
+    font-size: 15px;
+}
+
+.mainc .calender2 {
+   width: 900px;
+    height: auto;
+    margin-bottom: 2rem;
+}
 
 @media screen and (max-width:730px) {
 

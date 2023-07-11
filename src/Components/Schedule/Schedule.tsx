@@ -7,17 +7,17 @@ import SignalCellularAltOutlinedIcon from '@mui/icons-material/SignalCellularAlt
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import DateRangeIcon from '@mui/icons-material/DateRange';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+import AddIcon from '@mui/icons-material/Add';
 import Class from '../DummyData/Class';
+import Schedulee from './Calender/Schedule.js';
 
 
 const date1: Date = new Date()
 const date2 = date1.getDate();
 const month = date1.getMonth() + 1;
 const year = date1.getFullYear();
-const hour = date1.getHours();
-const minute = date1.getMinutes();
-const second = date1.getSeconds();
 
 interface typeofvar {
   ClassID: string
@@ -33,9 +33,9 @@ const Schedule = () => {
   const [date, setDate] = useState(fullDate);
   const [time, setTime] = useState('');
   const [classData, setClassData] = useState(initial);
-  const [datemap, setDatemap] = useState('');
-  const [Timemap, setTimemap] = useState('');
   const [tab, setTab] = useState(true);
+  const [val,setVal] = useState(false);
+  // console.log(val)
 
 
   useEffect(() => {
@@ -46,6 +46,13 @@ const Schedule = () => {
       clearInterval(myInterval);
     }
   }, []);
+
+  const current = new Date();
+  const b = current.toLocaleString('en-US', {
+    month: 'long',
+  });
+  // const Date1 = `${current.getFullYear()} ${b}  ${current.getDate()}`;
+
 
   return (
     <div className='schedule'>
@@ -124,7 +131,32 @@ const Schedule = () => {
                   </LocalizationProvider>
                 </div>
                 <div className="mainc">
+                  <div className="time">
+                    <div className="dropdown">
+                      <DateRangeIcon className='icon' />
+                      <select id="days">
+                        <option value="Today">Today</option>
+                        <option value="ThisWeek">This Week</option>
+                        <option value="LastWeek">Last Week</option>
+                      </select>
+                    </div>
+                    <div className="times">
+                      <div className="time">
+                        <p> {current.getFullYear()}</p><small className='colorMonth'>{b}</small><small className='colorMonth'>{current.getDate()}</small>
+                        <p>{time}</p>
+                      </div>
 
+
+                      <div className="button">
+                        <button  onClick={() => setVal(true)}>Add event<AddIcon className='icon' /></button>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div className="calender2">
+                    <Schedulee boot={val}/>
+                  </div>
                 </div>
               </div>
 
