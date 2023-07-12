@@ -4,6 +4,7 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import Dashboard from './Components/Dashboard/Dashboard';
 import { Grid } from '@mui/material';
 import Profile from './Components/Profile/Profile';
+import Schedule from './Components/Schedule/Schedule';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
 
               <Route path="/" element={<Dashboard />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/schedule" element={<Schedule />} />
             </Routes>
           </Grid>
         </Grid>

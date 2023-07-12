@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import Course from "./Course";
-import data from './Data'
+import data from '../DummyData/Data'
 import Carousel from "react-grid-carousel";
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import DateRangeIcon from '@mui/icons-material/DateRange';
