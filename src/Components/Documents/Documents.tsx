@@ -1,59 +1,92 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import './Documents.css';
 import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
 import CreateNewFolderOutlinedIcon from '@mui/icons-material/CreateNewFolderOutlined';
 import TaskOutlinedIcon from '@mui/icons-material/TaskOutlined';
-import { Box } from '@mui/system';
-import { Card, Typography } from '@mui/material';
-import { Button } from '@mui/base';
 import data from '../DummyData/data.json';
 import { useDropzone } from 'react-dropzone';
 
 const Documents = () => {
+    interface inter {
+        path?: string;
+        lastModified: number;
+        lastModifiedDate?: string | object;
+        name: string;
+        size: number;
+        type: string;
+        webkitRelativePath: string;
+    }
 
-    // const [files, setFiles] = React.useState([]);
-
+    const imgdrop: inter[] = data;
 
     const file = data.map((course, index) => (
-        <>
-            <Box>
-                {course.path}
-            </Box>
-            <Box>
-                <Card>
-                    <Typography >PDF</Typography>
-                </Card>
-            </Box>
-            <Box>
-                {course.size}KB
-            </Box>
-        </>
+        <div key={index} className='files'>
+            <div className="in">
+                <div className='name'>
+                    {course.name}
+                </div>
+
+                <div className='size'>
+                    {course.size}KB
+                </div>
+
+                <div className='people'>
+                    <p >10+</p>
+                </div>
+                <div className='modifi'>
+                    {course.lastModifiedDate}
+                </div>
+            </div>
+        </div>
     ));
 
-    // console.log(data)
+
+
 
     const {
+        getRootProps,
         getInputProps,
+        isFocused,
+        isDragAccept,
+        isDragReject,
         open,
     } = useDropzone({
-        accept: { 'image/*': [] }, noClick: true,
+        noClick: true,
         noKeyboard: true,
         onDrop: acceptedFiles => {
             console.log(acceptedFiles, data);
-            acceptedFiles.forEach(item => {
-                // data.push(item)
-                console.log(item)
+            acceptedFiles.forEach(File => {
+                imgdrop.push(File)
+                console.log(File)
             })
         }
     });
+    const focusedStyle = {
+        borderColor: '#2196f3'
+    };
+
+    const acceptStyle = {
+        borderColor: '#00e676'
+    };
+
+    const rejectStyle = {
+        borderColor: '#ff1744'
+    };
 
 
 
-    // const files1 = files.map(file => <Box key={file.path}>{file.path}</Box>);
 
-
+    const style = useMemo(() => ({
+        ...(isFocused ? focusedStyle : {}),
+        ...(isDragAccept ? acceptStyle : {}),
+        ...(isDragReject ? rejectStyle : {})
+    }), [
+        isFocused,
+        isDragAccept,
+        isDragReject
+    ]);
 
 
     const [tab1, setTab1] = useState(false);
@@ -93,21 +126,35 @@ const Documents = () => {
                 </div>
             </div>
 
-            <Box>
-                <input {...getInputProps()} />
-                <Typography >Drag 'n' drop some files here, or click to select files</Typography>
-                <Button onClick={open}>
-                    Choose a file
-                </Button>
-            </Box>
+            <div className="dandd">
+                <div className='dnd' {...getRootProps({ style })}>
+                    <div className="dnd1">
+                        <div className="dnd2">
+                            <input {...getInputProps()} />
+                            <CreateNewFolderOutlinedIcon />
+                            <p >Drag your documents, photos here</p>
+                            <p>or</p>
+                            <button onClick={open}>
+                                Browse files
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-            <Box>
-                <Typography> All documentes :</Typography>
-                <Box>
-                    <Box sx={{ p: 1 }}>{file}</Box>
-                    {/* <Box sx={{ p: 1 }}>{files1}</Box> */}
-                </Box>
-            </Box>
+                <div className='file'>
+                    <p>Recent Files</p>
+                    <div className="hd">
+                        <div className="one"><p>Name</p></div>
+                        <div className="two"><p>Size</p></div>
+                        <div className="three"><p>Shared With</p></div>
+                        <div className="four"><p>Last Modified</p></div>
+                    </div>
+                    <div>
+                        <div>{file}</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     )
 }

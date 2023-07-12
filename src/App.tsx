@@ -13,12 +13,11 @@ function App() {
       <Router>
         <Grid container sx={{ flexGrow: 1 }}>
           <Header />
-          <Grid xs={0} md={2.3} xl={1.7}>
+          <Grid item xs={0} md={2.3} xl={1.7}>
             <Sidebar />
           </Grid>
-          <Grid xs={12} md={9.7} xl={10.3}>
+          <Grid item xs={12} md={9.7} xl={10.3}>
             <Routes>
-
               <Route path="/" element={<Dashboard />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/schedule" element={<Schedule />} />

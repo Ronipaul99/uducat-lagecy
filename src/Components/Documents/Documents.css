@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     background: #F1F5FB;
-    height: 100vh;
+    height: 100%;
 }
 
 .document .ser {
@@ -152,9 +152,10 @@ input {
     gap: 1rem;
     align-items: center;
 }
-.document .fu .tabs .icon{
-  color: #444CE7;
-  font-size: 33px;
+
+.document .fu .tabs .icon {
+    color: #444CE7;
+    font-size: 33px;
 }
 
 .document .tabs button:active {
@@ -165,6 +166,87 @@ input {
     border-bottom: 3px solid #444CE7;
 }
 
+.files {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    background: white;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.files .in {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.files .in .name {
+    width:15%;
+    overflow: scroll;
+}
+.files .in .size {
+    width:15%;
+}
+.files .in .people {
+    width:15%;
+    display: flex;
+    justify-content: center;
+}
+
+.files .in .modifi {
+    width:15%;
+    overflow: scroll;
+}
+.dandd {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dandd .dnd {
+    width: 92%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.dandd .dnd1 {
+    width: 70%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    border: 1px dashed #444CE7;
+    margin: 2rem 0rem;
+    padding: 1rem;
+}
+
+.dandd .dnd2 {
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 100%;
+
+}
+
+.dandd .file {
+    width: 90%;
+}
+
+.file .hd {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
 
 
 @media screen and (max-width:1486px) {

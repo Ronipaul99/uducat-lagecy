@@ -1,14 +1,47 @@
 [
     {
-        "path": "PIC001",
-        "size": 100
+        "path": "-",
+        "lastModified": 1688283588378,
+        "lastModifiedDate": " Sun Jul 02 2023 13: 09: 48 GMT+0530 (India Standard Time)",
+        "name": "164455305_324081769074950_7997556780333176631_n.jpg",
+        "size": 44016,
+        "type": "image/jpeg",
+        "webkitRelativePath": ""
     },
     {
-        "path": "PIC002",
-        "size": 100
+        "path": "-",
+        "lastModified": 1688283588378,
+        "lastModifiedDate": " Sun Jul 02 2023 13: 09: 48 GMT+0530 (India Standard Time)",
+        "name": "164455305_324081769074950_7997556780333176631_n.jpg",
+        "size": 44016,
+        "type": "image/png",
+        "webkitRelativePath": ""
     },
     {
-        "path": "PIC003",
-        "size": 100
+        "path": "-",
+        "lastModified": 1688283588378,
+        "lastModifiedDate": " Sun Jul 02 2023 13: 09: 48 GMT+0530 (India Standard Time)",
+        "name": "164455305_324081769074950_7997556780333176631_n.jpg",
+        "size": 44016,
+        "type": "image/mp4",
+        "webkitRelativePath": ""
+    },
+    {
+        "path": "-",
+        "lastModified": 1688283588378,
+        "lastModifiedDate": " Sun Jul 02 2023 13: 09: 48 GMT+0530 (India Standard Time)",
+        "name": "164455305_324081769074950_7997556780333176631_n.jpg",
+        "size": 44016,
+        "type": "image/gif",
+        "webkitRelativePath": ""
+    },
+    {
+        "path": "-",
+        "lastModified": 1688283588378,
+        "lastModifiedDate": " Sun Jul 02 2023 13: 09: 48 GMT+0530 (India Standard Time)",
+        "name": "164455305_324081769074950_7997556780333176631_n.jpg",
+        "size": 44016,
+        "type": "image/webp",
+        "webkitRelativePath": ""
     }
 ]
