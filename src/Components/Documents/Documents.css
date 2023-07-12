@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.document {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #F1F5FB;
+    height: 100vh;
+}
+
+.document .ser {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ser .searchdiv {
+    width: 92%;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.ser .searchdiv .btns {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.ser .searchdiv .in {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    border-radius: 17px;
+    border: 3px solid #E2E2E2;
+    overflow: hidden;
+    height: 40px;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    margin-left: 1rem;
+    font-size: 18px;
+
+    &::placeholder {
+        color: rgba(123, 117, 117, 0.87);
+        font-size: 18px;
+        font-family: Roboto;
+        line-height: 22px;
+        letter-spacing: 0.5px;
+    }
+}
+
+.searchdiv .icon {
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        color: rgb(139, 139, 139);
+    }
+}
+
+.searchdiv .btns .btn {
+    background: #7B30C0;
+    color: white;
+    font-size: 13px;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+}
+
+.searchdiv .btns .cat {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    padding: .4rem 1.5rem;
+    border-radius: 15px;
+    background: none;
+    border: 2px solid #EA4C89;
+    width: fit-content;
+}
+
+.cat .t {
+    display: flex;
+}
+
+.tm {
+    display: flex;
+    align-items: center;
+    padding: .4rem 1.5rem;
+    gap: .2rem;
+    border: 2px solid #4CCDA1;
+    border-radius: 15px;
+    background: none;
+    width: fit-content;
+}
+
+.tm .t {
+    display: flex;
+}
+
+.doc .t {
+    display: flex;
+}
+
+.doc {
+    display: flex;
+    align-items: center;
+    padding: .4rem 1.5rem;
+    gap: .2rem;
+    border: 2px solid #444CE7;
+    border-radius: 15px;
+    background: none;
+    width: fit-content;
+    margin: 0;
+}
+
+.document .fu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.document .fu .tabs {
+    width: 92%;
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    border-bottom: 3px solid #D7D7D7;
+}
+
+
+.document .fu .tabs button {
+    background: none;
+    border: none;
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+    height: 50px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.document .fu .tabs .icon{
+  color: #444CE7;
+  font-size: 33px;
+}
+
+.document .tabs button:active {
+    background: rgb(255, 255, 255);
+}
+
+.document .tabs button:focus {
+    border-bottom: 3px solid #444CE7;
+}
+
+
+
+@media screen and (max-width:1486px) {
+    .ser .searchdiv {
+        flex-wrap: wrap;
+    }
+
+    .ser .searchdiv .btns {
+        width: 100%;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .ser .searchdiv .in {
+        width: 100%;
+        display: flex;
+    }
+
+}
