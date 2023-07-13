@@ -185,6 +185,12 @@ input {
 
 .files .in .name {
     width:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 0;
 }
 .files .in .name .logo{
     width:35px;
@@ -192,6 +198,8 @@ input {
 }
 .files .in .size {
     width:auto;
+    display: flex;
+    align-items: center;
 }
 .files .in .people {
     width:auto;
@@ -202,6 +210,8 @@ input {
 
 .files .in .modifi {
     width:auto;
+    display: flex;
+    align-items: center;
 }
 .dandd {
     width: 100%;
@@ -363,6 +373,12 @@ input {
 .files .in .name .logo{
     width:30px;
     height:30px;
+}
+.files .in {
+    padding: 1rem .8rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 }
