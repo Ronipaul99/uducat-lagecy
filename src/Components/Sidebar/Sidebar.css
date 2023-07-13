@@ -18,8 +18,8 @@ li {
 }
 
 .main {
-    height: 89.8vh;
-    width: 240px;
+    height: 100%;
+    width: 100%;
     margin: 0;
     left: 0;
     padding: 0;
