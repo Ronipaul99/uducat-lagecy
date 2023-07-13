@@ -1,12 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import './Documents.css';
 import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import Avatar from '@mui/material/Avatar';
+import AvatarGroup from '@mui/material/AvatarGroup';
 import StarBorderRoundedIcon from '@mui/icons-material/StarBorderRounded';
 import CreateNewFolderOutlinedIcon from '@mui/icons-material/CreateNewFolderOutlined';
 import TaskOutlinedIcon from '@mui/icons-material/TaskOutlined';
 import data from '../DummyData/data.json';
 import { useDropzone } from 'react-dropzone';
+import Images from './images';
+import img from './Images/icons8-image-30.png'
 
 const Documents = () => {
     interface inter {
@@ -20,11 +23,11 @@ const Documents = () => {
     }
 
     const imgdrop: inter[] = data;
-
     const file = data.map((course, index) => (
         <div key={index} className='files'>
             <div className="in">
                 <div className='name'>
+                    <img className='logo' src={img} alt="alt" />
                     {course.name}
                 </div>
 
@@ -33,7 +36,13 @@ const Documents = () => {
                 </div>
 
                 <div className='people'>
-                    <p >10+</p>
+                    <AvatarGroup max={3}>
+                        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                        <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+                        <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+                        <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" />
+                        <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" />
+                    </AvatarGroup>
                 </div>
                 <div className='modifi'>
                     {course.lastModifiedDate}
@@ -90,14 +99,18 @@ const Documents = () => {
 
 
     const [tab1, setTab1] = useState(false);
-    const [tab, setTab] = useState(false);
+    const [tab, setTab] = useState(true);
+
+    const rdpage = () => {
+        setTab(false);
+        setTab1(true);
+    }
     return (
         <div className='document'>
             <div className="ser">
                 <div className="searchdiv">
                     <div className="in">
                         <input type="text" placeholder='Search...' />
-                        <SearchOutlinedIcon fontSize='large' className='icon' />
                     </div>
                     <div className="btns">
                         <button className='btn'>
@@ -122,39 +135,52 @@ const Documents = () => {
                 <div className="tabs">
                     <button onClick={() => setTab(true)}>< CreateNewFolderOutlinedIcon className='icon' />Upload and attach docuents</button>
                     <button onClick={() => setTab(false)}>< TaskOutlinedIcon className='icon' />Documents list</button>
-                    <button onClick={() => setTab1(true)}><StarBorderRoundedIcon className='icon' />Started documents list</button>
+                    <button onClick={rdpage}><StarBorderRoundedIcon className='icon' />Started documents list</button>
                 </div>
             </div>
 
-            <div className="dandd">
-                <div className='dnd' {...getRootProps({ style })}>
-                    <div className="dnd1">
-                        <div className="dnd2">
-                            <input {...getInputProps()} />
-                            <CreateNewFolderOutlinedIcon />
-                            <p >Drag your documents, photos here</p>
-                            <p>or</p>
-                            <button onClick={open}>
-                                Browse files
-                            </button>
+            {tab ?
+                <div className="dandd">
+                    <div className='dnd' {...getRootProps({ style })}>
+                        <div className="dnd1">
+                            <div className="dnd2">
+                                <input {...getInputProps()} />
+                                <CreateNewFolderOutlinedIcon className='icn' />
+                                <p className='txt'>Drag your documents, photos here</p>
+                                <p className='or'>or</p>
+                                <button className='browsefilebtn' onClick={open}>
+                                    Browse files
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='file'>
+                        <p className='rf'>Recent Files</p>
+                        <div className="hd">
+                            <div className="hd1">
+                                <div className="one"><p>Name</p></div>
+                                <div className="two"><p>Size</p></div>
+                                <div className="three"><p>Shared With</p></div>
+                                <div className="four"><p>Last Modified</p></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>{file}</div>
                         </div>
                     </div>
                 </div>
-
-                <div className='file'>
-                    <p>Recent Files</p>
-                    <div className="hd">
-                        <div className="one"><p>Name</p></div>
-                        <div className="two"><p>Size</p></div>
-                        <div className="three"><p>Shared With</p></div>
-                        <div className="four"><p>Last Modified</p></div>
-                    </div>
-                    <div>
-                        <div>{file}</div>
-                    </div>
-                </div>
-            </div>
-
+                :
+                <>
+                </>
+            }
+            {tab1 ?
+                <>
+                </>
+                :
+                <>
+                </>
+            }
         </div>
     )
 }

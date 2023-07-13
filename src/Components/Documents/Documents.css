@@ -173,6 +173,7 @@ input {
     background: white;
     width: 100%;
     border-radius: 15px;
+    margin-bottom: 2rem;
 }
 
 .files .in {
@@ -183,21 +184,24 @@ input {
 }
 
 .files .in .name {
-    width:15%;
-    overflow: scroll;
+    width:auto;
+}
+.files .in .name .logo{
+    width:35px;
+    height:35px;
 }
 .files .in .size {
-    width:15%;
+    width:auto;
 }
 .files .in .people {
-    width:15%;
+    width:auto;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .files .in .modifi {
-    width:15%;
-    overflow: scroll;
+    width:auto;
 }
 .dandd {
     width: 100%;
@@ -239,15 +243,66 @@ input {
 }
 
 .dandd .file {
-    width: 90%;
+    width: 92%;
 }
 
 .file .hd {
     display: flex;
     width: 100%;
+    justify-content: center;
+}
+.file .hd .hd1{
+    display: flex;
+    width: 95%;
     justify-content: space-between;
 }
+.hd .hd1 .one{
+    color: #636161;
+    font-weight: 500;
+}
+.hd .hd1 .two{
+    color: #636161;
+    font-weight: 500;
+}
+.hd .hd1 .three{
+    color: #636161;
+    font-weight: 500;
+}
+.hd .hd1 .four{
+    color: #636161;
+    font-weight: 500;
+}
 
+.file .rf{
+    padding: 1rem 0rem 1rem 0rem;
+    font-weight: 500;
+    font-size: 23px;
+}
+.dnd2 .txt{
+    font-size: 20px;
+    font-weight: 500;
+    color: black
+}
+.dnd2 .or{
+    font-size: 15px;
+    font-weight: 400;
+    color: #BEBABA;
+}
+.dnd2 .browsefilebtn{
+    font-size: 15px;
+    font-weight: 400;
+    background: #7B30C0;
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: .7rem 1.5rem;
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+.dnd2 .icn{
+    font-size: 60px;
+    color: #444CE7;
+}
 
 @media screen and (max-width:1486px) {
     .ser .searchdiv {
@@ -265,4 +320,242 @@ input {
         display: flex;
     }
 
+}
+
+@media screen and (max-width:1037px) {
+    .document .fu .tabs button {
+        background: none;
+        border: none;
+        color: black;
+        font-weight: bold;
+        font-size: 15px;
+        height: 40px;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+       
+.document .fu .tabs .icon {
+    color: #444CE7;
+    font-size:30px;
+}
+    
+}
+
+@media screen and (max-width:700px) {
+    .document .fu .tabs button {
+        background: none;
+        border: none;
+        color: black;
+        font-weight: bold;
+        font-size: 12px;
+        height: 40px;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    
+.document .fu .tabs .icon {
+    color: #444CE7;
+    font-size:27px;
+}
+.files .in .name .logo{
+    width:30px;
+    height:30px;
+}
+
+}
+
+@media screen and (max-width:500px) {
+    .document .fu .tabs button {
+        background: none;
+        border: none;
+        color: black;
+        font-weight: bold;
+        font-size: 10px;
+        height: 35px;
+        display: flex;
+        gap: .3rem;
+        align-items: center;
+    }
+    
+    
+.document .fu .tabs .icon {
+    color: #444CE7;
+    font-size:22px;
+}
+.document .fu .tabs {
+    width: 92%;
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    border-bottom: 3px solid #D7D7D7;
+}
+
+   
+.dandd .dnd {
+    width: 92%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.dandd .dnd1 {
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    border: 1px dashed #444CE7;
+    margin: 2rem 0rem;
+    padding: 1rem;
+}
+
+.dandd .dnd2 {
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 100%;
+
+}
+.dnd2 .txt{
+    font-size: 13px;
+    font-weight: 500;
+    color: black
+}
+.dnd2 .or{
+    font-size: 12px;
+    font-weight: 400;
+    color: #BEBABA;
+}
+.dnd2 .browsefilebtn{
+    font-size: 11px;
+    font-weight: 400;
+    background: #7B30C0;
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+.dnd2 .icn{
+    font-size: 40px;
+    color: #444CE7;
+}
+
+.hd .one{
+    color: #636161;
+    font-weight: 500;
+    font-size: 15px;
+}
+.hd .two{
+    color: #636161;
+    font-weight: 500;
+    font-size: 15px;
+}
+.hd .three{
+    color: #636161;
+    font-weight: 500;
+    font-size: 15px;
+}
+.hd .four{
+    color: #636161;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.file .rf{
+    padding: 1rem 0rem 1rem 0rem;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.files .in .name {
+    width:auto;
+    font-size: 12px;
+}
+.files .in .size {
+    width:auto;
+    font-size: 12px;
+}
+.files .in .people {
+    width:auto;
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    align-items: center;
+}
+
+.files .in .modifi {
+    width:auto;
+    font-size: 12px;
+}
+.dandd {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+}
+
+@media screen and (max-width:300px) {
+    .document .fu .tabs button {
+        background: none;
+        border: none;
+        color: black;
+        font-weight: bold;
+        font-size: 8px;
+        height: 30px;
+        display: flex;
+        gap: .2rem;
+        align-items: center;
+    }
+    
+    
+.document .fu .tabs .icon {
+    color: #444CE7;
+    font-size:20px;
+}
+.document .fu .tabs {
+    width: 92%;
+    display: flex;
+    gap: .7rem;
+    margin-top: 3rem;
+    border-bottom: 3px solid #D7D7D7;
+}
+
+
+.hd .one{
+    color: #636161;
+    font-weight: 500;
+    font-size: 12px;
+}
+.hd .two{
+    color: #636161;
+    font-weight: 500;
+    font-size: 12px;
+}
+.hd .three{
+    color: #636161;
+    font-weight: 500;
+    font-size: 12px;
+}
+.hd .four{
+    color: #636161;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.file .rf{
+    padding: 1rem 0rem 1rem 0rem;
+    font-weight: 500;
+    font-size: 18px;
+}
 }
