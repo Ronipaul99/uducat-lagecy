@@ -100,11 +100,26 @@ const Documents = () => {
 
     const [tab1, setTab1] = useState(false);
     const [tab, setTab] = useState(true);
+    const [tab2, setTab2] = useState(false);
 
     const rdpage = () => {
-        setTab(false);
-        setTab1(true);
+        setTab2(true);
+        setTab(false)
+        setTab1(false)
     }
+
+    const ndpage = () => {
+        setTab(false)
+        setTab1(true)
+        setTab2(false)
+    }
+
+    const stpage = () => {
+        setTab(true)
+        setTab1(false)
+        setTab2(false)
+    }
+
     return (
         <div className='document'>
             <div className="ser">
@@ -133,13 +148,13 @@ const Documents = () => {
             </div>
             <div className="fu">
                 <div className="tabs">
-                    <button onClick={() => setTab(true)}>< CreateNewFolderOutlinedIcon className='icon' />Upload and attach docuents</button>
-                    <button onClick={() => setTab(false)}>< TaskOutlinedIcon className='icon' />Documents list</button>
+                    <button onClick={stpage}>< CreateNewFolderOutlinedIcon className='icon' />Upload and attach docuents</button>
+                    <button onClick={ndpage}>< TaskOutlinedIcon className='icon' />Documents list</button>
                     <button onClick={rdpage}><StarBorderRoundedIcon className='icon' />Started documents list</button>
                 </div>
             </div>
 
-            {tab ?
+            {tab &&
                 <div className="dandd">
                     <div className='dnd' {...getRootProps({ style })}>
                         <div className="dnd1">
@@ -170,15 +185,27 @@ const Documents = () => {
                         </div>
                     </div>
                 </div>
-                :
-                <>
-                </>
             }
-            {tab1 ?
+            {tab1 &&
+                <div className='case'>
+                    <div className='file'>
+                        <div className="hd">
+                            <div className="hd1">
+                                <div className="one"><p>Name</p></div>
+                                <div className="two"><p>Size</p></div>
+                                <div className="three"><p>Shared With</p></div>
+                                <div className="four"><p>Last Modified</p></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>{file}</div>
+                        </div>
+                    </div>
+                </div>
+            }
+            {tab2 &&
                 <>
-                </>
-                :
-                <>
+
                 </>
             }
         </div>
