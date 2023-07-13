@@ -142,6 +142,7 @@ p {
 
 .uid{
     display: flex;
+    align-items: center;
 }
 
 

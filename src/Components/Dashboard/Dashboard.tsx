@@ -317,7 +317,7 @@ const Dashboard = () => {
 
 
                     <div className="nd2">
-                        <div className="side2 flex">
+                        <div className="side2">
                             <div className="left2">
                                 {/* calender */}
                                 <LocalizationProvider dateAdapter={AdapterDayjs}>
