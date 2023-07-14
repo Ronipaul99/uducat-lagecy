@@ -30,11 +30,18 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    justify-content: center;
+    margin-left: 2rem;
 }
 
-.ser .searchdiv .in {
-    width: 40%;
+.ser .searchdiv .infull {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    gap: 1rem;
+}
+
+.ser .searchdiv .infull .in {
+    width: 100%;
     display: flex;
     align-items: center;
     border-radius: 17px;
@@ -61,16 +68,7 @@ input {
     }
 }
 
-.searchdiv .icon {
-    padding: 1rem;
-    cursor: pointer;
-
-    &:hover {
-        color: rgb(139, 139, 139);
-    }
-}
-
-.searchdiv .btns .btn {
+.infull .btn {
     background: #7B30C0;
     color: white;
     font-size: 13px;
@@ -78,6 +76,15 @@ input {
     padding: 1rem 2rem;
     border-radius: 15px;
 }
+
+/* .searchdiv .btns .btn {
+    background: #7B30C0;
+    color: white;
+    font-size: 13px;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+} */
 
 .searchdiv .btns .cat {
     display: flex;
@@ -184,7 +191,7 @@ input {
 }
 
 .files .in .name {
-    width:auto;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,27 +199,31 @@ input {
     margin: 0;
     gap: 0;
 }
-.files .in .name .logo{
-    width:35px;
-    height:35px;
+
+.files .in .name .logo {
+    width: 35px;
+    height: 35px;
 }
+
 .files .in .size {
-    width:auto;
+    width: auto;
     display: flex;
     align-items: center;
 }
+
 .files .in .people {
-    width:auto;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .files .in .modifi {
-    width:auto;
+    width: auto;
     display: flex;
     align-items: center;
 }
+
 .dandd {
     width: 100%;
     display: flex;
@@ -261,44 +272,52 @@ input {
     width: 100%;
     justify-content: center;
 }
-.file .hd .hd1{
+
+.file .hd .hd1 {
     display: flex;
     width: 95%;
     justify-content: space-between;
 }
-.hd .hd1 .one{
-    color: #636161;
-    font-weight: 500;
-}
-.hd .hd1 .two{
-    color: #636161;
-    font-weight: 500;
-}
-.hd .hd1 .three{
-    color: #636161;
-    font-weight: 500;
-}
-.hd .hd1 .four{
+
+.hd .hd1 .one {
     color: #636161;
     font-weight: 500;
 }
 
-.file .rf{
+.hd .hd1 .two {
+    color: #636161;
+    font-weight: 500;
+}
+
+.hd .hd1 .three {
+    color: #636161;
+    font-weight: 500;
+}
+
+.hd .hd1 .four {
+    color: #636161;
+    font-weight: 500;
+}
+
+.file .rf {
     padding: 1rem 0rem 1rem 0rem;
     font-weight: 500;
     font-size: 23px;
 }
-.dnd2 .txt{
+
+.dnd2 .txt {
     font-size: 20px;
     font-weight: 500;
     color: black
 }
-.dnd2 .or{
+
+.dnd2 .or {
     font-size: 15px;
     font-weight: 400;
     color: #BEBABA;
 }
-.dnd2 .browsefilebtn{
+
+.dnd2 .browsefilebtn {
     font-size: 15px;
     font-weight: 400;
     background: #7B30C0;
@@ -309,7 +328,8 @@ input {
     border-radius: 15px;
     margin-top: 1rem;
 }
-.dnd2 .icn{
+
+.dnd2 .icn {
     font-size: 60px;
     color: #444CE7;
 }
@@ -323,9 +343,11 @@ input {
         width: 100%;
         margin-top: 2rem;
         flex-wrap: wrap;
+        margin-left: 0;
+        justify-content: center;
     }
 
-    .ser .searchdiv .in {
+    .ser .searchdiv .infull {
         width: 100%;
         display: flex;
     }
@@ -344,12 +366,12 @@ input {
         gap: 1rem;
         align-items: center;
     }
-       
-.document .fu .tabs .icon {
-    color: #444CE7;
-    font-size:30px;
-}
-    
+
+    .document .fu .tabs .icon {
+        color: #444CE7;
+        font-size: 30px;
+    }
+
 }
 
 @media screen and (max-width:700px) {
@@ -364,22 +386,24 @@ input {
         gap: 1rem;
         align-items: center;
     }
-    
-    
-.document .fu .tabs .icon {
-    color: #444CE7;
-    font-size:27px;
-}
-.files .in .name .logo{
-    width:30px;
-    height:30px;
-}
-.files .in {
-    padding: 1rem .8rem;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
+
+
+    .document .fu .tabs .icon {
+        color: #444CE7;
+        font-size: 27px;
+    }
+
+    .files .in .name .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .files .in {
+        padding: 1rem .8rem;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
 
 }
 
@@ -395,130 +419,141 @@ input {
         gap: .3rem;
         align-items: center;
     }
-    
-    
-.document .fu .tabs .icon {
-    color: #444CE7;
-    font-size:22px;
-}
-.document .fu .tabs {
-    width: 92%;
-    display: flex;
-    gap: 1rem;
-    margin-top: 3rem;
-    border-bottom: 3px solid #D7D7D7;
-}
-
-   
-.dandd .dnd {
-    width: 92%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
 
 
-.dandd .dnd1 {
-    width: 100%;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 450px;
-    border: 1px dashed #444CE7;
-    margin: 2rem 0rem;
-    padding: 1rem;
-}
+    .document .fu .tabs .icon {
+        color: #444CE7;
+        font-size: 22px;
+    }
 
-.dandd .dnd2 {
-    width: 100%;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    height: 100%;
+    .document .fu .tabs {
+        width: 92%;
+        display: flex;
+        gap: 1rem;
+        margin-top: 3rem;
+        border-bottom: 3px solid #D7D7D7;
+    }
 
-}
-.dnd2 .txt{
-    font-size: 13px;
-    font-weight: 500;
-    color: black
-}
-.dnd2 .or{
-    font-size: 12px;
-    font-weight: 400;
-    color: #BEBABA;
-}
-.dnd2 .browsefilebtn{
-    font-size: 11px;
-    font-weight: 400;
-    background: #7B30C0;
-    color: white;
-    border: none;
-    padding: .5rem 1rem;
-    border-radius: 15px;
-    margin-top: 1rem;
-}
-.dnd2 .icn{
-    font-size: 40px;
-    color: #444CE7;
-}
 
-.hd .one{
-    color: #636161;
-    font-weight: 500;
-    font-size: 15px;
-}
-.hd .two{
-    color: #636161;
-    font-weight: 500;
-    font-size: 15px;
-}
-.hd .three{
-    color: #636161;
-    font-weight: 500;
-    font-size: 15px;
-}
-.hd .four{
-    color: #636161;
-    font-weight: 500;
-    font-size: 15px;
-}
+    .dandd .dnd {
+        width: 92%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
 
-.file .rf{
-    padding: 1rem 0rem 1rem 0rem;
-    font-weight: 500;
-    font-size: 20px;
-}
 
-.files .in .name {
-    width:auto;
-    font-size: 12px;
-}
-.files .in .size {
-    width:auto;
-    font-size: 12px;
-}
-.files .in .people {
-    width:auto;
-    display: flex;
-    justify-content: center;
-    font-size: 12px;
-    align-items: center;
-}
+    .dandd .dnd1 {
+        width: 100%;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 450px;
+        border: 1px dashed #444CE7;
+        margin: 2rem 0rem;
+        padding: 1rem;
+    }
 
-.files .in .modifi {
-    width:auto;
-    font-size: 12px;
-}
-.dandd {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+    .dandd .dnd2 {
+        width: 100%;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        height: 100%;
+
+    }
+
+    .dnd2 .txt {
+        font-size: 13px;
+        font-weight: 500;
+        color: black
+    }
+
+    .dnd2 .or {
+        font-size: 12px;
+        font-weight: 400;
+        color: #BEBABA;
+    }
+
+    .dnd2 .browsefilebtn {
+        font-size: 11px;
+        font-weight: 400;
+        background: #7B30C0;
+        color: white;
+        border: none;
+        padding: .5rem 1rem;
+        border-radius: 15px;
+        margin-top: 1rem;
+    }
+
+    .dnd2 .icn {
+        font-size: 40px;
+        color: #444CE7;
+    }
+
+    .hd .one {
+        color: #636161;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    .hd .two {
+        color: #636161;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    .hd .three {
+        color: #636161;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    .hd .four {
+        color: #636161;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    .file .rf {
+        padding: 1rem 0rem 1rem 0rem;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .files .in .name {
+        width: auto;
+        font-size: 12px;
+    }
+
+    .files .in .size {
+        width: auto;
+        font-size: 12px;
+    }
+
+    .files .in .people {
+        width: auto;
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        align-items: center;
+    }
+
+    .files .in .modifi {
+        width: auto;
+        font-size: 12px;
+    }
+
+    .dandd {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width:300px) {
@@ -533,45 +568,49 @@ input {
         gap: .2rem;
         align-items: center;
     }
-    
-    
-.document .fu .tabs .icon {
-    color: #444CE7;
-    font-size:20px;
-}
-.document .fu .tabs {
-    width: 92%;
-    display: flex;
-    gap: .7rem;
-    margin-top: 3rem;
-    border-bottom: 3px solid #D7D7D7;
-}
 
 
-.hd .one{
-    color: #636161;
-    font-weight: 500;
-    font-size: 12px;
-}
-.hd .two{
-    color: #636161;
-    font-weight: 500;
-    font-size: 12px;
-}
-.hd .three{
-    color: #636161;
-    font-weight: 500;
-    font-size: 12px;
-}
-.hd .four{
-    color: #636161;
-    font-weight: 500;
-    font-size: 12px;
-}
+    .document .fu .tabs .icon {
+        color: #444CE7;
+        font-size: 20px;
+    }
 
-.file .rf{
-    padding: 1rem 0rem 1rem 0rem;
-    font-weight: 500;
-    font-size: 18px;
-}
+    .document .fu .tabs {
+        width: 92%;
+        display: flex;
+        gap: .7rem;
+        margin-top: 3rem;
+        border-bottom: 3px solid #D7D7D7;
+    }
+
+
+    .hd .one {
+        color: #636161;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+    .hd .two {
+        color: #636161;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+    .hd .three {
+        color: #636161;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+    .hd .four {
+        color: #636161;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+    .file .rf {
+        padding: 1rem 0rem 1rem 0rem;
+        font-weight: 500;
+        font-size: 18px;
+    }
 }

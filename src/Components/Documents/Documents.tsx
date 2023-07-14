@@ -124,13 +124,16 @@ const Documents = () => {
         <div className='document'>
             <div className="ser">
                 <div className="searchdiv">
-                    <div className="in">
-                        <input type="text" placeholder='Search...' />
-                    </div>
-                    <div className="btns">
+                    <div className="infull">
+                        <div className="in">
+                            <input type="text" placeholder='Search...' />
+                        </div>
                         <button className='btn'>
                             Search
                         </button>
+                    </div>
+                    <div className="btns">
+
                         <div className='cat'>
                             <p className='t'> Category</p>
                             <DriveFileRenameOutlineOutlinedIcon className='ico' />
