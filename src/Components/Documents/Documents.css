@@ -267,6 +267,12 @@ input {
     width: 92%;
 }
 
+
+.dandd .file1 {
+    width: 92%;
+
+}
+
 .file .hd {
     display: flex;
     width: 100%;
@@ -334,6 +340,85 @@ input {
     color: #444CE7;
 }
 
+.case {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.case .file1 {
+    display: flex;
+    width: 92%;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.file1 .fheader {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+.fheader .f{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.fheader .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid #7B30C0;
+    background: none;
+    border-radius: 15px;
+    padding: .5rem .7rem;
+    gap: .5rem;
+}
+.fheader .btn .icon{
+   font-size: 15px;
+}
+
+.case .file1 .hd {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.case .file1 .hd .hd1 {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+}
+
+.hd .hd1 .one {
+    color: #636161;
+    font-weight: 500;
+}
+
+.hd .hd1 .two {
+    color: #636161;
+    font-weight: 500;
+}
+
+.hd .hd1 .three {
+    color: #636161;
+    font-weight: 500;
+}
+
+.hd .hd1 .four {
+    color: #636161;
+    font-weight: 500;
+}
+
+.file1 .rf {
+    padding: 1rem 0rem 1rem 0rem;
+    font-weight: 500;
+    font-size: 23px;
+}
+
+.folderlist{
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
 @media screen and (max-width:1486px) {
     .ser .searchdiv {
         flex-wrap: wrap;

@@ -8,8 +8,10 @@ import CreateNewFolderOutlinedIcon from '@mui/icons-material/CreateNewFolderOutl
 import TaskOutlinedIcon from '@mui/icons-material/TaskOutlined';
 import data from '../DummyData/data.json';
 import { useDropzone } from 'react-dropzone';
-import Images from './images';
+// import Images from './images';
 import img from './Images/icons8-image-30.png'
+import AddIcon from '@mui/icons-material/Add';
+import Folder from './FolderList/Folder';
 
 const Documents = () => {
     interface inter {
@@ -23,6 +25,14 @@ const Documents = () => {
     }
 
     const imgdrop: inter[] = data;
+    // const [imgtype,setImgtype]=useState("");
+
+    // for (let i = 0; i < data.length; i++) {
+    //     setImgtype(data[i].type);
+    // }
+
+    // console.log(imgtype)
+
     const file = data.map((course, index) => (
         <div key={index} className='files'>
             <div className="in">
@@ -151,7 +161,7 @@ const Documents = () => {
             </div>
             <div className="fu">
                 <div className="tabs">
-                    <button onClick={stpage}>< CreateNewFolderOutlinedIcon className='icon' />Upload and attach docuents</button>
+                    <button onClick={stpage}>< CreateNewFolderOutlinedIcon className='icon' />Upload and attach documents</button>
                     <button onClick={ndpage}>< TaskOutlinedIcon className='icon' />Documents list</button>
                     <button onClick={rdpage}><StarBorderRoundedIcon className='icon' />Started documents list</button>
                 </div>
@@ -191,7 +201,32 @@ const Documents = () => {
             }
             {tab1 &&
                 <div className='case'>
-                    <div className='file'>
+                    <div className='file1'>
+                        <div className="hd">
+                            <div className="hd1">
+                                <div className="one"><p>Name</p></div>
+                                <div className="two"><p>Size</p></div>
+                                <div className="three"><p>Shared With</p></div>
+                                <div className="four"><p>Last Modified</p></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>{file}</div>
+                        </div>
+                        <div className="fheader">
+                            <p className='f'>Folders</p>
+                            <button className='btn'>Create folder<AddIcon className='icon' /></button>
+                        </div>
+                        <div className="folderlist">
+                           <Folder/> 
+                        </div>
+                    </div>
+                </div>
+            }
+            {tab2 &&
+                <>
+                <div className='case'>
+                    <div className='file1'>
                         <div className="hd">
                             <div className="hd1">
                                 <div className="one"><p>Name</p></div>
@@ -205,10 +240,6 @@ const Documents = () => {
                         </div>
                     </div>
                 </div>
-            }
-            {tab2 &&
-                <>
-
                 </>
             }
         </div>
