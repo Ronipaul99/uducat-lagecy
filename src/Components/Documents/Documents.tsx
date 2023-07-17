@@ -130,8 +130,13 @@ const Documents = () => {
         setTab2(false)
     }
 
+    const [popup, setPopup] = useState("crd")
+
     return (
         <div className='document'>
+
+
+
             <div className="ser">
                 <div className="searchdiv">
                     <div className="infull">
@@ -193,53 +198,84 @@ const Documents = () => {
                                 <div className="four"><p>Last Modified</p></div>
                             </div>
                         </div>
-                        <div>
+                        <div className='filelist'>
                             <div>{file}</div>
                         </div>
                     </div>
                 </div>
             }
             {tab1 &&
-                <div className='case'>
-                    <div className='file1'>
-                        <div className="hd">
-                            <div className="hd1">
-                                <div className="one"><p>Name</p></div>
-                                <div className="two"><p>Size</p></div>
-                                <div className="three"><p>Shared With</p></div>
-                                <div className="four"><p>Last Modified</p></div>
+                <>
+                    {/* pop up */}
+                    <div className={popup}>
+                        <div className="upr">
+                            <div className="upr1">
+                                <p>Documents</p>
+                                < StarBorderRoundedIcon />
                             </div>
+
+                            <div className="f1">
+                                <div className="l12">
+                                    <p> Document type</p>
+                                    <input className='input' type="text" placeholder='Word file' />
+                                    <p>Document name</p>
+                                    <input className='input' type="text" placeholder='mymaterialsinformation' />
+                                </div>
+                                <div className="r1">
+                                    <p>Last modified date </p>
+                                    <input className='input' type="date" />
+                                    <p>Document size</p>
+                                    <input className='input' type="text" />
+                                </div>
+                            </div>
+
                         </div>
-                        <div>
-                            <div>{file}</div>
-                        </div>
-                        <div className="fheader">
-                            <p className='f'>Folders</p>
-                            <button className='btn'>Create folder<AddIcon className='icon' /></button>
-                        </div>
-                        <div className="folderlist">
-                           <Folder/> 
+                        <div className="lwr">
+
                         </div>
                     </div>
-                </div>
+                    {/* pop up */}
+                    <div className='case'>
+                        <div className='file1'>
+                            <div className="hd">
+                                <div className="hd1">
+                                    <div className="one"><p>Name</p></div>
+                                    <div className="two"><p>Size</p></div>
+                                    <div className="three"><p>Shared With</p></div>
+                                    <div className="four"><p>Last Modified</p></div>
+                                </div>
+                            </div>
+                            <div className='filelist'>
+                                <div>{file}</div>
+                            </div>
+                            <div className="fheader">
+                                <p className='f'>Folders</p>
+                                <button className='btn' onClick={() => { setPopup("popup") }}>Create folder<AddIcon className='icon' /></button>
+                            </div>
+                            <div className="folderlist">
+                                <Folder />
+                            </div>
+                        </div>
+                    </div>
+                </>
             }
             {tab2 &&
                 <>
-                <div className='case'>
-                    <div className='file1'>
-                        <div className="hd">
-                            <div className="hd1">
-                                <div className="one"><p>Name</p></div>
-                                <div className="two"><p>Size</p></div>
-                                <div className="three"><p>Shared With</p></div>
-                                <div className="four"><p>Last Modified</p></div>
+                    <div className='case'>
+                        <div className='file1'>
+                            <div className="hd">
+                                <div className="hd1">
+                                    <div className="one"><p>Name</p></div>
+                                    <div className="two"><p>Size</p></div>
+                                    <div className="three"><p>Shared With</p></div>
+                                    <div className="four"><p>Last Modified</p></div>
+                                </div>
+                            </div>
+                            <div className='filelist'>
+                                <div>{file}</div>
                             </div>
                         </div>
-                        <div>
-                            <div>{file}</div>
-                        </div>
                     </div>
-                </div>
                 </>
             }
         </div>

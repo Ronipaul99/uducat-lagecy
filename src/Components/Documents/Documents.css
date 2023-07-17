@@ -9,6 +9,7 @@
     flex-direction: column;
     background: #F1F5FB;
     height: 100%;
+    position: relative;
 }
 
 .document .ser {
@@ -50,7 +51,7 @@
     height: 40px;
 }
 
-input {
+.in input {
     width: 100%;
     height: 100%;
     border: none;
@@ -188,6 +189,12 @@ input {
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+.filelist {
+    height: 550px;
+    overflow: scroll;
+    margin-bottom: 3rem;
 }
 
 .files .in .name {
@@ -358,7 +365,8 @@ input {
     gap: 4rem;
     align-items: center;
 }
-.fheader .f{
+
+.fheader .f {
     font-size: 20px;
     font-weight: 500;
 }
@@ -367,14 +375,15 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    border:1px solid #7B30C0;
+    border: 1px solid #7B30C0;
     background: none;
     border-radius: 15px;
     padding: .5rem .7rem;
     gap: .5rem;
 }
-.fheader .btn .icon{
-   font-size: 15px;
+
+.fheader .btn .icon {
+    font-size: 15px;
 }
 
 .case .file1 .hd {
@@ -415,10 +424,107 @@ input {
     font-size: 23px;
 }
 
-.folderlist{
+.folderlist {
     margin-top: 2rem;
     margin-bottom: 3rem;
 }
+
+.crd {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background: white;
+    box-shadow: 0 5px 10px #d8d8d8;
+    position: absolute;
+    right: 50%;
+    margin-top: 2rem;
+    z-index: 99999999999;
+    transform: translate(-50%);
+    border-radius: 1rem;
+    top: -500rem;
+    height: fit-content;
+    padding: 1rem;
+    transition: 0.5s ease-in-out;
+    padding: 2rem;
+}
+
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: fit-content;
+    background: white;
+    box-shadow: 0 5px 10px #d8d8d8;
+    position: fixed;
+    right: 50%;
+    left: 50%;
+    top: 38%;
+    z-index: 99999999999;
+    transform: translate(-50%);
+    border-radius: 1rem;
+    padding: 1rem;
+    transition: 0.5s ease-in-out;
+    padding: 2rem;
+}
+
+.crd .upr {
+    display: flex;
+    flex-direction: column;
+}
+
+.upr .upr1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.upr .f1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.f1 .l12 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.l12 .input{
+    width: 100%;
+    background: red;
+
+    
+    &::placeholder {
+        color: rgba(123, 117, 117, 0.87);
+        font-size: 11px;
+        font-family: Roboto;
+        line-height: 22px;
+        letter-spacing: 0.5px;
+    }
+}
+
+
+.f1 .r1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup .upr {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup .upr1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup .upr .f1 {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    border-bottom: 1px solid #7B7575;
+}
+
 @media screen and (max-width:1486px) {
     .ser .searchdiv {
         flex-wrap: wrap;
