@@ -9,7 +9,6 @@
     flex-direction: column;
     background: #F1F5FB;
     height: 100%;
-    position: relative;
 }
 
 .document .ser {
@@ -432,12 +431,12 @@
 .crd {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 26%;
     background: white;
     box-shadow: 0 5px 10px #d8d8d8;
     position: absolute;
-    right: 50%;
-    margin-top: 2rem;
+    right: 0;
+    left: 0;
     z-index: 99999999999;
     transform: translate(-50%);
     border-radius: 1rem;
@@ -449,10 +448,19 @@
 }
 
 
+.popup .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: .5rem;
+    font-size: 28px;
+}
+
+
 .popup {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 26%;
     height: fit-content;
     background: white;
     box-shadow: 0 5px 10px #d8d8d8;
@@ -468,6 +476,28 @@
     padding: 2rem;
 }
 
+.popup .lwr {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.lwr .outlined {
+    border: 1px solid #7B30C0;
+    border-radius: 15px;
+    background: none;
+    padding: .6rem 2rem;
+}
+
+.lwr .contained {
+    border: none;
+    border-radius: 15px;
+    background: #7B30C0;
+    color: white;
+    padding: .6rem 2rem;
+    margin-left: 1rem;
+}
+
 .crd .upr {
     display: flex;
     flex-direction: column;
@@ -478,25 +508,46 @@
     justify-content: space-between;
 }
 
+.upr1 .doctitle {
+    font-size: 23px;
+    color: black;
+    font-weight: 500;
+}
+
 .upr .f1 {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .f1 .l12 {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
-.l12 .input{
-    width: 100%;
-    background: red;
 
-    
+.l12 .input {
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-top: .5rem;
+
     &::placeholder {
         color: rgba(123, 117, 117, 0.87);
-        font-size: 11px;
-        font-family: Roboto;
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: 0.5px;
+    }
+}
+
+.r1 .input {
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-top: .5rem;
+
+    &::placeholder {
+        color: rgba(123, 117, 117, 0.87);
+        font-size: 12px;
         line-height: 22px;
         letter-spacing: 0.5px;
     }
@@ -518,12 +569,33 @@
     justify-content: space-between;
 }
 
+.upr1 .icon1 {
+    font-size: 40px;
+    color: #444CE7;
+}
+
 .popup .upr .f1 {
     display: flex;
     padding: 1rem;
     justify-content: space-between;
     border-bottom: 1px solid #7B7575;
 }
+
+.l12 .lable {
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    margin-top: 1rem;
+}
+
+.r1 .lable {
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    margin-top: 1rem;
+}
+
+/* media querry */
 
 @media screen and (max-width:1486px) {
     .ser .searchdiv {
@@ -545,41 +617,47 @@
 
 }
 
-@media screen and (max-width:1037px) {
-    .document .fu .tabs button {
-        background: none;
-        border: none;
-        color: black;
-        font-weight: bold;
-        font-size: 15px;
-        height: 40px;
+@media screen and (max-width:1241px) {
+    .document .popup .upr .f1 {
         display: flex;
-        gap: 1rem;
-        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .document .fu .tabs .icon {
+    .popup {
+        width: 38%;
+        top: 15%;
+    }
+}
+
+@media screen and (max-width:1037px) {
+    .document .fu .tabs button {
+        font-size: 15px;
+        height: 40px;
+        gap: 1rem;
+    }
+
+    .tabs .icon {
         color: #444CE7;
         font-size: 30px;
     }
 
 }
 
+
 @media screen and (max-width:700px) {
     .document .fu .tabs button {
-        background: none;
-        border: none;
-        color: black;
-        font-weight: bold;
         font-size: 12px;
         height: 40px;
-        display: flex;
         gap: 1rem;
-        align-items: center;
+    }
+
+    .document .popup {
+        width: 75%;
     }
 
 
-    .document .fu .tabs .icon {
+    .tabs .icon {
         color: #444CE7;
         font-size: 27px;
     }
@@ -598,19 +676,14 @@
 
 }
 
+
 @media screen and (max-width:500px) {
     .document .fu .tabs button {
-        background: none;
-        border: none;
-        color: black;
-        font-weight: bold;
         font-size: 10px;
         height: 35px;
-        display: flex;
         gap: .3rem;
-        align-items: center;
-    }
 
+    }
 
     .document .fu .tabs .icon {
         color: #444CE7;
@@ -745,7 +818,9 @@
         align-items: center;
         flex-direction: column;
     }
+
 }
+
 
 @media screen and (max-width:300px) {
     .document .fu .tabs button {

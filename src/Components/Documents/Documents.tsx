@@ -9,7 +9,8 @@ import TaskOutlinedIcon from '@mui/icons-material/TaskOutlined';
 import data from '../DummyData/data.json';
 import { useDropzone } from 'react-dropzone';
 // import Images from './images';
-import img from './Images/icons8-image-30.png'
+import img from './Images/icons8-image-30.png';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import AddIcon from '@mui/icons-material/Add';
 import Folder from './FolderList/Folder';
 
@@ -114,23 +115,26 @@ const Documents = () => {
 
     const rdpage = () => {
         setTab2(true);
-        setTab(false)
-        setTab1(false)
+        setTab(false);
+        setTab1(false);
     }
 
     const ndpage = () => {
-        setTab(false)
-        setTab1(true)
-        setTab2(false)
+        setTab(false);
+        setTab1(true);
+        setTab2(false);
     }
 
     const stpage = () => {
-        setTab(true)
-        setTab1(false)
-        setTab2(false)
+        setTab(true);
+        setTab1(false);
+        setTab2(false);
     }
 
-    const [popup, setPopup] = useState("crd")
+    const [popup, setPopup] = useState("crd");
+    const close = () => {
+        setPopup("crd")
+    }
 
     return (
         <div className='document'>
@@ -210,28 +214,33 @@ const Documents = () => {
                     <div className={popup}>
                         <div className="upr">
                             <div className="upr1">
-                                <p>Documents</p>
-                                < StarBorderRoundedIcon />
+                                <p className='doctitle'>Documents</p>
+                                < StarBorderRoundedIcon className='icon1' />
                             </div>
 
                             <div className="f1">
                                 <div className="l12">
-                                    <p> Document type</p>
+                                    <p className='lable'> Document type</p>
                                     <input className='input' type="text" placeholder='Word file' />
-                                    <p>Document name</p>
+                                    <p className='lable'>Document name</p>
                                     <input className='input' type="text" placeholder='mymaterialsinformation' />
                                 </div>
                                 <div className="r1">
-                                    <p>Last modified date </p>
+                                    <p className='lable'>Last modified date </p>
                                     <input className='input' type="date" />
-                                    <p>Document size</p>
-                                    <input className='input' type="text" />
+                                    <p className='lable'>Document size</p>
+                                    <input className='input' type="text" placeholder='size' />
                                 </div>
                             </div>
 
                         </div>
                         <div className="lwr">
-
+                            <button onClick={close} className='outlined'>
+                            Close
+                            </button>
+                            <button className='contained'>
+                            Quick link
+                            </button>
                         </div>
                     </div>
                     {/* pop up */}
