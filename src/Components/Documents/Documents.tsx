@@ -18,7 +18,7 @@ const Documents = () => {
     interface inter {
         path: string;
         lastModified: number;
-        lastModifiedDate: any;
+        lastModifiedDate: string;
         name: string;
         size: number;
         type: string;
@@ -56,7 +56,7 @@ const Documents = () => {
                     </AvatarGroup>
                 </div>
                 <div className='modifi'>
-                    {course.lastModifiedDate.toString().slice(0, 16)}
+                    {course.lastModifiedDate.toString().slice(4, 16)}
                 </div>
             </div>
         </div>
