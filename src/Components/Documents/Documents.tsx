@@ -39,11 +39,11 @@ const Documents = () => {
             <div className="in">
                 <div className='name'>
                     <img className='logo' src={img} alt="alt" />
-                    {course.name}
+                    {course.name.slice(0, 4)}...
                 </div>
 
                 <div className='size'>
-                    {course.size}KB
+                    {(course.size / (1024 * 1024)).toFixed(2)}MB
                 </div>
 
                 <div className='people'>
