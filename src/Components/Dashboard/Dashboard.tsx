@@ -111,7 +111,7 @@ const Dashboard = () => {
                         <div className="st">
                             <div className="flex">
                                 <p className='cardheader'>Total hours through this month</p>
-                                < QueryBuilderOutlinedIcon className='icon' />
+                                <QueryBuilderOutlinedIcon className='icon' />
                             </div>
                             <div className='number1'>
                                 <h1 className='bold'>557</h1>

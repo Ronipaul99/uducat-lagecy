@@ -16,9 +16,9 @@ import Folder from './FolderList/Folder';
 
 const Documents = () => {
     interface inter {
-        path?: string;
+        path: string;
         lastModified: number;
-        lastModifiedDate?: string | object;
+        lastModifiedDate: any;
         name: string;
         size: number;
         type: string;
@@ -56,7 +56,7 @@ const Documents = () => {
                     </AvatarGroup>
                 </div>
                 <div className='modifi'>
-                    {course.lastModifiedDate}
+                    {course.lastModifiedDate.toString().slice(0, 16)}
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@ const Documents = () => {
         noKeyboard: true,
         onDrop: acceptedFiles => {
             console.log(acceptedFiles, data);
-            acceptedFiles.forEach(File => {
+            acceptedFiles.forEach((File: any): any => {
                 imgdrop.push(File)
                 console.log(File)
             })
@@ -236,10 +236,10 @@ const Documents = () => {
                         </div>
                         <div className="lwr">
                             <button onClick={close} className='outlined'>
-                            Close
+                                Close
                             </button>
                             <button className='contained'>
-                            Quick link
+                                Quick link
                             </button>
                         </div>
                     </div>
