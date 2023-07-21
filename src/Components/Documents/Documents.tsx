@@ -76,10 +76,9 @@ const Documents = () => {
         noClick: true,
         noKeyboard: true,
         onDrop: acceptedFiles => {
-            console.log(acceptedFiles, data);
+            // console.log(acceptedFiles, data);
             acceptedFiles.forEach((File: any): any => {
                 imgdrop.push(File)
-                console.log(File)
             })
         }
     });
