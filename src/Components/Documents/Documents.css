@@ -467,7 +467,7 @@
     position: fixed;
     right: 50%;
     left: 50%;
-    top: 38%;
+    top: 10%;
     z-index: 99999999999;
     transform: translate(-50%);
     border-radius: 1rem;

@@ -1283,12 +1283,48 @@ input {
         gap: 2rem;
     }
 
+    .st {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem 1.7rem;
+        box-shadow: 0 5px 10px #d8d8d8;
+        border-radius: 25px;
+    }
+    
+.rd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0 5px 10px #d8d8d8;
+    border-radius: 25px;
+}
+
+
+.nd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0 5px 10px #d8d8d8;
+    border-radius: 25px;
+}
+
+.side .right {
+    border-left: none;
+    border-top: 2px dotted rgb(136, 136, 136);
+}
+.nd1 .side {
+    justify-content: center;
+    align-items: center;
+}
 
 }
-@media screen and (min-width:1500px) {
+@media screen and (max-width:1500px) {
     .side .right {
-        border-left: 2px dotted rgb(136, 136, 136);
-        border-top: none;
+        border-left: none;
+        border-top: 2px dotted rgb(136, 136, 136);
     }
 }
 
