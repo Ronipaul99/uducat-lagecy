@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import './Documents.css';
 import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
 import Avatar from '@mui/material/Avatar';
@@ -10,7 +10,6 @@ import data from '../DummyData/data.json';
 import { useDropzone } from 'react-dropzone';
 // import Images from './images';
 import img from './Images/icons8-image-30.png';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import AddIcon from '@mui/icons-material/Add';
 import Folder from './FolderList/Folder';
 
@@ -66,11 +65,7 @@ const Documents = () => {
 
 
     const {
-        getRootProps,
         getInputProps,
-        isFocused,
-        isDragAccept,
-        isDragReject,
         open,
     } = useDropzone({
         noClick: true,
@@ -82,31 +77,10 @@ const Documents = () => {
             })
         }
     });
-    const focusedStyle = {
-        borderColor: '#2196f3'
-    };
-
-    const acceptStyle = {
-        borderColor: '#00e676'
-    };
-
-    const rejectStyle = {
-        borderColor: '#ff1744'
-    };
 
 
 
-
-    const style = useMemo(() => ({
-        ...(isFocused ? focusedStyle : {}),
-        ...(isDragAccept ? acceptStyle : {}),
-        ...(isDragReject ? rejectStyle : {})
-    }), [
-        isFocused,
-        isDragAccept,
-        isDragReject
-    ]);
-
+  
 
     const [tab1, setTab1] = useState(false);
     const [tab, setTab] = useState(true);
@@ -177,7 +151,7 @@ const Documents = () => {
 
             {tab &&
                 <div className="dandd">
-                    <div className='dnd' {...getRootProps({ style })}>
+                    <div className='dnd'>
                         <div className="dnd1">
                             <div className="dnd2">
                                 <input {...getInputProps()} />
