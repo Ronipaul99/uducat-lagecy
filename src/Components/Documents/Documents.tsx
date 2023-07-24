@@ -22,6 +22,7 @@ const Documents = () => {
         size: number;
         type: string;
         webkitRelativePath: string;
+        SharedWith?:number;
     }
 
     const imgdrop: inter[] = data;
@@ -33,20 +34,20 @@ const Documents = () => {
 
     // console.log(imgtype)
 
-    const file = data.map((course, index) => (
+    const file = data.map((document, index) => (
         <div key={index} className='files'>
             <div className="in">
                 <div className='name'>
                     <img className='logo' src={img} alt="alt" />
-                    {course.name.slice(0, 4)}...
+                    {document.name.slice(0, 4)}...
                 </div>
 
                 <div className='size'>
-                    {(course.size / (1024 * 1024)).toFixed(2)}MB
+                    {(document.size / (1024 * 1024)).toFixed(2)}MB
                 </div>
 
                 <div className='people'>
-                    <AvatarGroup max={3} total={24}>
+                    <AvatarGroup max={3} total={document.SharedWith}>
                         <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                         <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
                         <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
@@ -55,7 +56,7 @@ const Documents = () => {
                     </AvatarGroup>
                 </div>
                 <div className='modifi'>
-                    {course.lastModifiedDate.toString().slice(4, 16)}
+                    {document.lastModifiedDate.toString().slice(4, 16)}
                 </div>
             </div>
         </div>

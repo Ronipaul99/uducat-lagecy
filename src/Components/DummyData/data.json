@@ -6,7 +6,8 @@
         "name": "pic.jpg",
         "size": 44016,
         "type": "image/jpeg",
-        "webkitRelativePath": ""
+        "webkitRelativePath": "",
+        "SharedWith": 4
     },
     {
         "path": "-",
@@ -15,7 +16,8 @@
         "name": "pic.jpg",
         "size": 44016,
         "type": "image/png",
-        "webkitRelativePath": ""
+        "webkitRelativePath": "",
+        "SharedWith": 5
     },
     {
         "path": "-",
@@ -24,7 +26,8 @@
         "name": "pic.jpg",
         "size": 44016,
         "type": "image/mp4",
-        "webkitRelativePath": ""
+        "webkitRelativePath": "",
+        "SharedWith": 20
     },
     {
         "path": "-",
@@ -33,7 +36,8 @@
         "name": "pic.jpg",
         "size": 44016,
         "type": "image/gif",
-        "webkitRelativePath": ""
+        "webkitRelativePath": "",
+        "SharedWith": 12
     },
     {
         "path": "-",
@@ -42,6 +46,7 @@
         "name": "pic.jpg",
         "size": 44016,
         "type": "image/webp",
-        "webkitRelativePath": ""
+        "webkitRelativePath": "",
+        "SharedWith": 9
     }
 ]
