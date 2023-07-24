@@ -22,7 +22,7 @@ const Documents = () => {
         size: number;
         type: string;
         webkitRelativePath: string;
-        SharedWith?:number;
+        SharedWith: number;
     }
 
     const imgdrop: inter[] = data;
@@ -81,7 +81,7 @@ const Documents = () => {
 
 
 
-  
+
 
     const [tab1, setTab1] = useState(false);
     const [tab, setTab] = useState(true);
