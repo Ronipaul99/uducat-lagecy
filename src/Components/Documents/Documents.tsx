@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import './Documents.css';
 import DriveFileRenameOutlineOutlinedIcon from '@mui/icons-material/DriveFileRenameOutlineOutlined';
 import Avatar from '@mui/material/Avatar';
@@ -66,8 +66,12 @@ const Documents = () => {
 
 
     const {
+        getRootProps,
         getInputProps,
+        isFocused,
         open,
+        isDragAccept,
+        isDragReject
     } = useDropzone({
         noClick: true,
         noKeyboard: true,
@@ -80,6 +84,34 @@ const Documents = () => {
     });
 
 
+
+    const baseStyle = {
+
+    };
+
+    const focusedStyle = {
+        borderColor: '#2196f3'
+    };
+
+    const acceptStyle = {
+        borderColor: '#00e676'
+    };
+
+    const rejectStyle = {
+        borderColor: '#ff1744'
+    };
+
+
+    const style = useMemo(() => ({
+        ...baseStyle,
+        ...(isFocused ? focusedStyle : {}),
+        ...(isDragAccept ? acceptStyle : {}),
+        ...(isDragReject ? rejectStyle : {})
+    }), [
+        isFocused,
+        isDragAccept,
+        isDragReject
+    ]);
 
 
 
@@ -153,7 +185,7 @@ const Documents = () => {
             {tab &&
                 <div className="dandd">
                     <div className='dnd'>
-                        <div className="dnd1">
+                        <div className="dnd1" {...getRootProps({ style })}>
                             <div className="dnd2">
                                 <input {...getInputProps()} />
                                 <CreateNewFolderOutlinedIcon className='icn' />
