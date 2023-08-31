@@ -72,6 +72,7 @@
     background: #7B30C0;
     color: white;
     font-size: 13px;
+    cursor: pointer;
     border: none;
     padding: 1rem 2rem;
     border-radius: 15px;
@@ -152,8 +153,10 @@
     background: none;
     border: none;
     color: black;
+    outline: none;
     font-weight: bold;
     font-size: 17px;
+    cursor: pointer;
     height: 50px;
     display: flex;
     gap: 1rem;
@@ -164,11 +167,6 @@
     color: #444CE7;
     font-size: 33px;
 }
-
-.document .tabs button:active {
-    background: rgb(255, 255, 255);
-}
-
 .document .tabs button:focus {
     border-bottom: 3px solid #444CE7;
 }
@@ -335,6 +333,7 @@
     background: #7B30C0;
     color: white;
     font-weight: 500;
+    cursor: pointer;
     border: none;
     padding: .7rem 1.5rem;
     border-radius: 15px;
