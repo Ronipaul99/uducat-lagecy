@@ -11,10 +11,12 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 import { PieChart, Pie, Cell } from 'recharts';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutlineOutlined';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import pic from './video.png'
 import Courses from '../Courses/Courses';
+import cover from './cover.png';
 
 const Profile = () => {
     const [value, setValue] = React.useState<number | null>(1);
@@ -44,8 +46,17 @@ const Profile = () => {
 
 
             <div className="profilefull">
+                <div className="uprImg">
+                    <div className="cover">
+                        <ManageAccountsIcon className='setting' />
+                        <div className="highlight">
+                            <p>Mobile & Website <span>App</span></p>
+                        </div>
+                        <img className='coverImg' src={cover} alt="cover" />
+                    </div>
+                </div>
                 <div className="profiledetails">
-                    <ManageAccountsIcon className='ico' />
+                    <EditIcon className='ico' />
                     <div className="upper">
                         <div className="full">
                             <div className="image">
@@ -61,9 +72,9 @@ const Profile = () => {
                     </div>
 
                     <div className="lower">
-                        <div className="first"><h1>18</h1><p>Number of courses</p><MenuBookOutlinedIcon className='book' sx={{ fontSize: "45px" }} /></div>
-                        <div className="first"><h1>15</h1><p>Classes taken</p><MenuBookOutlinedIcon className='book' sx={{ fontSize: "45px" }} /></div>
-                        <div className="first"><h1>15</h1><p>Number of subscribed student</p><MenuBookOutlinedIcon className='book' sx={{ fontSize: "45px" }} /></div>
+                        <div className="first"><h1>18</h1><p>Number of courses</p><MenuBookOutlinedIcon className='book1' sx={{ fontSize: "45px" }} /></div>
+                        <div className="first"><h1>15</h1><p>Classes taken</p><MenuBookOutlinedIcon className='book1' sx={{ fontSize: "45px" }} /></div>
+                        <div className="first"><h1>15</h1><p>Number of subscribed student</p><MenuBookOutlinedIcon className='book1' sx={{ fontSize: "45px" }} /></div>
                     </div>
                 </div>
             </div>
@@ -94,72 +105,40 @@ const Profile = () => {
             </div>
             <div className="Educationaldetails">
                 <div className="main">
-                    <div className="sub">
-                        <div className="card">
-                            <h1 className='bold'>Highest qualification hold
-                                by teacher</h1>
-                            <div className="box">
-                                <li>
-                                    <FiberManualRecordIcon className='icon' />
-                                    <p> Master of Education (M.Ed.): This is a
-                                        postgraduate degree that focuses
-                                        on advanced study in education.
-                                        Teachers with an M.Ed.
-                                    </p>
-                                </li>
-                            </div>
-                            <div className="low">
-                                <button>Read more</button>
-                                <div className="line"></div>
-                            </div>
+                    <div className="fst">
+                        <div className="lft">
+                            <CheckCircleOutlineOutlinedIcon className='tick' />
                         </div>
+                        <div className="rht">
+                            <p>Highest qualification hold by teacher</p>
+                            <small>Master of Education (M.Ed.): This is a postgraduate degree that focuses
+                                on advanced study in education. Teachers with an M.Ed.</small>
 
-
-                        <div className="card">
-                            <h1 className='bold'>Experience profile of
-                                teacher</h1>
-                            <div className="box">
-                                <li> <FiberManualRecordIcon className='icon' />
-                                    <p> Classroom Teaching: Teachers spend
-                                        significant time teaching and
-                                        engaging with students in classroom
-                                    </p>
-                                </li>
-                                <li> <FiberManualRecordIcon className='icon' />
-                                    <p> MLesson Planning: Teachers spend
-                                        time preparing lessons and developing.
-                                    </p>
-                                </li>
-                            </div>
-                            <div className="low">
-                                <button>Read more</button>
-                                <div className="line"></div>
-                            </div>
-                        </div>
-
-
-                        <div className="card">
-                            <h1 className='bold'>Specialization and
-                                skills </h1>
-                            <div className="box">
-                                <li> <FiberManualRecordIcon className='icon' />
-                                    <p> Bachelor of Education (B.Ed.):
-                                        This is a common undergraduate
-                                        degree
-                                    </p>
-                                </li>
-                                <li> <FiberManualRecordIcon className='icon' />
-                                    <p> High School Teachers: specialize in
-                                        specific subjects and work with students
-                                    </p>
-                                </li>
-                            </div>
-                            <div className="low">
-                                <button>Read more</button>
-                                <div className="line"></div>
-                            </div>
                         </div>
                     </div>
+                    <div className="fst">
+                        <div className="lft">
+                            <CheckCircleOutlineOutlinedIcon className='tick1' />
+                        </div>
+                        <div className="rht">
+                            <p>Experience profile of teacher</p>
+                            <small>Classroom Teaching: Teachers spend significant time teaching and
+                                engaging with students in classroom</small>
+                        </div>
+                    </div>
+                    <div className="fst">
+                        <div className="lft">
+                            <CheckCircleOutlineOutlinedIcon className='tick2' />
+                        </div>
+                        <div className="rht">
+                            <p>Specialization and skills </p>
+                            <small>Bachelor of Education (B.Ed.): This is a common undergraduate
+                                degree</small>
+                        </div>
+                    </div>
+
+
+                    <button className='readmore'>Read more</button>
                 </div>
             </div>
 

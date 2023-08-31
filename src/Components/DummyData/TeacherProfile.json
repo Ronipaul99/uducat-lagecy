@@ -1,0 +1,34 @@
+{
+    "profileImg": "ProfileImage",
+    "teacherName": "Reshab",
+    "rating": 5,
+    "bio": "My name is Reshab Naskar",
+    "courses": 12,
+    "classTaken": 5,
+    "subscriber": 10,
+    "certificates": [
+        {
+            "centificateName": "PHD in Computer Science"
+        }
+    ],
+    "educationalDetails": {
+        "qualification": "",
+        "experience": [],
+        "specialization": []
+    },
+    "introVideo": {
+        "videoUrl": "",
+        "videoLike": 20,
+        "videoDislike": 15,
+        "comments": [
+            {
+                "ProfilePic": "",
+                "name": "",
+                "type": "",
+                "rating": 5,
+                "comment": ""
+            }
+        ]
+    },
+    "CourseList": []
+}
