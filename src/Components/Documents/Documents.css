@@ -376,6 +376,7 @@
     border: 1px solid #7B30C0;
     background: none;
     border-radius: 15px;
+    cursor: pointer;
     padding: .5rem .7rem;
     gap: .5rem;
 }
@@ -439,7 +440,7 @@
     z-index: 99999999999;
     transform: translate(-50%);
     border-radius: 1rem;
-    top: -500rem;
+    top: -50rem;
     height: fit-content;
     padding: 1rem;
     transition: 0.5s ease-in-out;
