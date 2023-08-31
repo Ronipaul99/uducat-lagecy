@@ -236,6 +236,7 @@
 .certificatemain {
     width: 100%;
     display: flex;
+    overflow: hidden;
     justify-content: center;
 }
 
@@ -248,15 +249,14 @@
 
 
 .Educationaldetails .main {
-    width: 87%;
+    width: 90%;
     height: max-content;
     display: flex;
     justify-content: center;
     background: white;
     border-radius: 25px;
     position: relative;
-    flex-direction: column;
-    padding: 2rem;
+    flex-direction: column
 }
 
 .Educationaldetails .main button {
@@ -268,16 +268,17 @@
     color: white;
     width: fit-content;
     align-self: flex-end;
-    margin-right: 3rem;
     margin-top: 1.5rem;
     cursor: pointer;
+    margin: 1rem;
 }
 
 .Educationaldetails .main .fst {
     width: 100%;
     display: flex;
-    margin-top: 1.5rem;
+    width: fit-content;
     gap: .6rem;
+    margin: 2rem 2rem 0 2rem;
 }
 
 .Educationaldetails .main .fst .rht P {
@@ -371,7 +372,7 @@
 }
 
 .video .subvid {
-    width: 91%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
 }
@@ -390,7 +391,7 @@
     width: 90%;
     border-radius: 25px;
     overflow: hidden;
-    padding: 1rem 1rem 0 0;
+    padding: 1rem 1rem 1rem 0;
     position: relative;
 }
 
@@ -402,6 +403,16 @@
     color: #7B30C0;
     background: white;
     border-radius: 50%;
+}
+.subvid .left .upper .editVid{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 30px;
+    color:#444CE7;
+    background: white;
+    border-radius: 50%;
+    padding: .5rem;
 }
 
 .subvid .left .upper .time {
@@ -536,7 +547,7 @@
     gap: 2rem;
     border-radius: 25px;
     height: max-content;
-    padding: 2rem 2rem;
+    padding: 1.5rem 1.5rem;
     display: flex;
     align-items: center;
 }
@@ -546,25 +557,25 @@
     right: 0;
     top: 0;
     color: #ff478e;
-    font-size: 70px;
+    font-size: 60px;
     margin: 1rem;
     padding: 1rem;
 }
 
 .message h1 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     color: black;
 }
 
 .message p {
-    font-size: 15px;
+    font-size: 13px;
     color: black;
     margin-top: .2rem;
 }
 
 .message h6 {
-    font-size: 15px;
+    font-size: 13px;
     color: #BEBABA;
     margin-top: .2rem;
     font-weight: 400;
@@ -590,10 +601,47 @@
     object-fit: cover;
 }
 
+@media screen and (max-width:1533px) {
+    .profile .profiledetails .lower .first {
+        margin-top: 2rem;
+    }
+}
+
+
+@media screen and (max-width:1246px) {
+    .video .subvid {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .subvid .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+}
 
 @media screen and (max-width:1191px) {
     .profile .profiledetails .lower .first {
         margin-top: 2rem;
+    }
+}
+
+
+@media screen and (max-width:1141px) {
+    .Educationaldetails .sub {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
     }
 }
 
@@ -609,6 +657,20 @@
     .profile .profiledetails .upper {
         justify-content: center;
     }
+       
+.profile .profiledetails .ico {
+    right: 1%;
+    top: 0;
+}
+}
+
+@media screen and (max-width:653px) {
+    
+.profile .profiledetails .ico {
+    right: 15%;
+    top: 26%;
+    padding: .5rem;
+}
 }
 
 @media screen and (max-width:500px) {
@@ -635,46 +697,10 @@
         justify-content: center;
         align-items: center;
     }
-}
-
-@media screen and (max-width:1533px) {
-    .profile .profiledetails .lower .first {
-        margin-top: 2rem;
-    }
-}
-
-@media screen and (max-width:1141px) {
-    .Educationaldetails .sub {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-    }
-}
-
-@media screen and (max-width:1246px) {
-    .video .subvid {
-        width: 90%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    .subvid .left {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-}
-
-@media screen and (max-width:500px) {
     .profiledetailss .upper {
         flex-wrap: wrap;
+    }
+    .top {
+        padding: 2rem 0rem 0rem 2rem;
     }
 }

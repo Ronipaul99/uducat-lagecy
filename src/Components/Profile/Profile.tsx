@@ -154,6 +154,7 @@ const Profile = () => {
                             <p className='time'>15.4</p>
                             <PlayCircleIcon className='play' />
                             <img src={pic} alt="video" />
+                            <EditIcon className='editVid'/>
                         </div>
                         <div className="lower">
                             <div className="pie">

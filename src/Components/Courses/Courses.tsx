@@ -21,7 +21,7 @@ const initialProducts: type[] = data;
 const Courses = () => {
     const [course, setCourse] = useState(initialProducts);
     return (
-        <div className="course" style={{ width: "100%", overflow: "hidden" }}>
+        <div className="course" style={{ width: "100%", overflow: "hidden",marginBottom:"1rem" }}>
             <Carousel cols={3}>
                 {course.map((course, index) => (
                     <Carousel.Item key={index}>
