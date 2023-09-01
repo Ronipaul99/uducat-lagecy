@@ -167,6 +167,7 @@
     color: #444CE7;
     font-size: 33px;
 }
+
 .document .tabs button:focus {
     border-bottom: 3px solid #444CE7;
 }
@@ -190,7 +191,8 @@
 
 .filelist {
     height: 550px;
-    overflow: scroll;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     margin-bottom: 3rem;
 }
 
@@ -671,6 +673,11 @@
     .files .in .name .logo {
         width: 30px;
         height: 30px;
+    }
+    .files .in .name .wordLogo {
+        width: 23px;
+        height: 23px;
+        margin-right: .3rem;
     }
 
     .files .in {
