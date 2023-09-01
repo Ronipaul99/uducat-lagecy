@@ -209,6 +209,12 @@
     height: 35px;
 }
 
+.files .in .name .wordLogo {
+    width: 28px;
+    height: 28px;
+    margin-right: .3rem;
+}
+
 .files .in .size {
     width: auto;
     display: flex;

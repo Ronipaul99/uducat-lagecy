@@ -12,6 +12,9 @@ import { useDropzone } from 'react-dropzone';
 import img from './Images/icons8-image-30.png';
 import AddIcon from '@mui/icons-material/Add';
 import Folder from './FolderList/Folder';
+import video from './Images/videoIcn.png';
+import PDF from './Images/PDF.png';
+import Word from './Images/Word.png';
 
 const Documents = () => {
     interface inter {
@@ -26,6 +29,8 @@ const Documents = () => {
     }
 
     const imgdrop: inter[] = data;
+
+    console.log(data)
     // const [imgtype,setImgtype]=useState("");
 
     // for (let i = 0; i < data.length; i++) {
@@ -38,7 +43,10 @@ const Documents = () => {
         <div key={index} className='files'>
             <div className="in">
                 <div className='name'>
-                    <img className='logo' src={img} alt="alt" />
+                    {document.type === "image/jpeg" || document.type === "image/png" || document.type === "image/webp" ? <img className='logo' src={img} alt="alt" /> : null}
+                    {document.type === "video/mp4" && <img className='logo' src={video} alt='video' />}
+                    {document.type === "application/pdf" && <img className='logo' src={PDF} alt='PDF' />}
+                    {document.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document" && <img className='wordLogo' src={Word} alt='Word' />}
                     {document.name.slice(0, 4)}...
                 </div>
 
