@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Profile.css';
 import Rating from '@mui/material/Rating';
 import EditIcon from '@mui/icons-material/Edit';
@@ -10,41 +10,43 @@ import MilitaryTechOutlinedIcon from '@mui/icons-material/MilitaryTechOutlined';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 import { PieChart, Pie, Cell } from 'recharts';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import CheckCircleOutlineOutlinedIcon from '@mui/icons-material/CheckCircleOutlineOutlined';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import pic from './video.png'
 import Courses from '../Courses/Courses';
 import cover from './cover.png';
+import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 const Profile = () => {
-    const [value, setValue] = React.useState<number | null>(1);
-    const certificate = [
-        {
-            name: "Subject-Specific Certificates"
-        },
-        {
-            name: "Subject-Specific Certificates"
-        },
-        {
-            name: "Subject-Specific Certificates"
-        }, {
-            name: "Subject-Specific Certificates"
-        }, {
-            name: "Subject-Specific Certificates"
-        }
-    ];
-
-    const data = [
-        { name: "Group A", value: 800 },
-        { name: "Group B", value: 400 }
-    ];
+    const [cookies, setCookie] = useCookies(['ProfileData']);
+    const [profileData, setProfileData] = useState(cookies.ProfileData);
+    // Profile data fetching
+    axios.get("http://localhost:4001/getProfile/64f71a5c3b03ff6344a82b43").then((res) => {
+        setProfileData(res.data);
+        setCookie('ProfileData', res.data, { path: 'localhost:3000/' });
+    }).catch(() => {
+        console.log("Something went wrong!");
+    });
+    // Interface
+    interface PD {
+        id: number;
+        profileImg: string;
+        teacherName: string;
+        rating: number;
+        bio: string;
+        courses: number;
+        classTaken: number;
+        subscriber: number;
+        certificates: any;
+        educationalDetails: any;
+        introVideo: any;
+        CourseList: any;
+    }
+    const Profile: PD = profileData!;
     const COLORS = ["#7B30C0", "#6161F1"];
     return (
         <div className='profile'>
-
-
             <div className="profilefull">
                 <div className="uprImg">
                     <div className="cover">
@@ -60,37 +62,36 @@ const Profile = () => {
                     <div className="upper">
                         <div className="full">
                             <div className="image">
-                                <img src="https://cdn.dribbble.com/users/1632728/screenshots/4693038/media/c277ac982112db2505e7e2de2d7a2af6.gif" alt="profile pic" />
+                                <img src={Profile.profileImg} alt="profile pic" />
                                 <EditIcon className='edit' />
                             </div>
                         </div>
                         <div className="details">
-                            <h1>Biswarup Kundu</h1>
-                            <Rating name="read-only" sx={{ mt: 2 }} value={value} readOnly />
-                            <p>Biswarup Kundu is a passionate and dedicated educator with over 10 years of teaching experience. He believes that education is the key to unlocking the potential in every student and strives to create a positive and inclusive learning environment where all students can thrive.</p>
+                            <h1>{Profile.teacherName}</h1>
+                            <Rating name="read-only" sx={{ mt: 2 }} value={Profile.rating} readOnly />
+                            <p>{Profile.bio}</p>
                         </div>
                     </div>
-
                     <div className="lower">
-                        <div className="first"><h1>18</h1><p>Number of courses</p><MenuBookOutlinedIcon className='book1' sx={{ fontSize: "45px" }} /></div>
-                        <div className="first"><h1>15</h1><p>Classes taken</p><MenuBookOutlinedIcon className='book1' sx={{ fontSize: "45px" }} /></div>
-                        <div className="first"><h1>15</h1><p>Number of subscribed student</p><MenuBookOutlinedIcon className='book1' sx={{ fontSize: "45px" }} /></div>
+                        <div className="first"><h1>{Profile.courses}</h1><p>Number of courses</p><MenuBookOutlinedIcon className='book1' sx={{ fontSize: "45px" }} /></div>
+                        <div className="first"><h1>{Profile.classTaken}</h1><p>Classes taken</p><MenuBookOutlinedIcon className='book1' sx={{ fontSize: "45px" }} /></div>
+                        <div className="first"><h1>{Profile.subscriber}</h1><p>Number of subscribed student</p><MenuBookOutlinedIcon className='book1' sx={{ fontSize: "45px" }} /></div>
                     </div>
                 </div>
             </div>
 
 
-
+            {/* Certificate */}
             <div className="top">
                 <p>Certificate</p>
             </div>
             <div className="certificatemain">
                 <div className="certificate">
                     <Carousel cols={3}>
-                        {certificate.map((course, index) => (
+                        {Profile.certificates.map((course: any, index: any) => (
                             <Carousel.Item key={index}>
                                 <div className="card12">
-                                    <div className="first"><MilitaryTechOutlinedIcon className='ico1' sx={{ fontSize: "35px" }} /><p>{course.name}</p>< VerifiedIcon className='book' sx={{ fontSize: "45px" }} />
+                                    <div className="first"><MilitaryTechOutlinedIcon className='ico1' sx={{ fontSize: "35px" }} /><p>{course}</p>< VerifiedIcon className='book' sx={{ fontSize: "45px" }} />
                                     </div>
                                 </div>
                             </Carousel.Item>
@@ -99,7 +100,7 @@ const Profile = () => {
                 </div>
             </div>
 
-
+            {/* Educational Details */}
             <div className="top">
                 <p>Educational details</p>
             </div>
@@ -111,8 +112,7 @@ const Profile = () => {
                         </div>
                         <div className="rht">
                             <p>Highest qualification hold by teacher</p>
-                            <small>Master of Education (M.Ed.): This is a postgraduate degree that focuses
-                                on advanced study in education. Teachers with an M.Ed.</small>
+                            <small>{Profile.educationalDetails.Qualification}</small>
 
                         </div>
                     </div>
@@ -122,8 +122,7 @@ const Profile = () => {
                         </div>
                         <div className="rht">
                             <p>Experience profile of teacher</p>
-                            <small>Classroom Teaching: Teachers spend significant time teaching and
-                                engaging with students in classroom</small>
+                            <small>{Profile.educationalDetails.Experience}</small>
                         </div>
                     </div>
                     <div className="fst">
@@ -132,29 +131,25 @@ const Profile = () => {
                         </div>
                         <div className="rht">
                             <p>Specialization and skills </p>
-                            <small>Bachelor of Education (B.Ed.): This is a common undergraduate
-                                degree</small>
+                            <small>{Profile.educationalDetails.Specialization}</small>
                         </div>
                     </div>
-
-
                     <button className='readmore'>Read more</button>
                 </div>
             </div>
 
-
+            {/* Video Section */}
             <div className="top">
                 <p>Intro Video</p>
             </div>
             <div className="video">
                 <div className="subvid">
-
                     <div className="left">
                         <div className="upper">
                             <p className='time'>15.4</p>
                             <PlayCircleIcon className='play' />
-                            <img src={pic} alt="video" />
-                            <EditIcon className='editVid'/>
+                            <img src={Profile.introVideo.videoPicURL} alt="video" />
+                            <EditIcon className='editVid' />
                         </div>
                         <div className="lower">
                             <div className="pie">
@@ -162,7 +157,7 @@ const Profile = () => {
                                 <div className="tag2">100</div>
                                 <PieChart width={400} height={400}>
                                     <Pie
-                                        data={data}
+                                        data={Profile.introVideo.Likes}
                                         cx={200}
                                         cy={200}
                                         innerRadius={40}
@@ -171,12 +166,11 @@ const Profile = () => {
                                         paddingAngle={5}
                                         dataKey="value"
                                     >
-                                        {data.map((entry, index) => (
+                                        {Profile.introVideo.Likes.map((entry: any, index: any) => (
                                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                         ))}
                                     </Pie>
                                 </PieChart>
-
                             </div>
                             <div className="like">
                                 <ThumbUpOutlinedIcon className='icon1' />
@@ -185,83 +179,35 @@ const Profile = () => {
                         </div>
                     </div>
 
-
-
+                    {/* Comments */}
                     <div className="right">
-                        <div className="first">
-                            <div className="profilefull">
-                                <div className="profiledetailss">
-                                    <p className='ico1'>"</p>
-                                    <div className="upper">
-                                        <div className="full1">
-                                            <div className="imagee">
-                                                <img src="https://cdn.dribbble.com/users/1632728/screenshots/4693038/media/c277ac982112db2505e7e2de2d7a2af6.gif" alt="profile pic" />
-                                            </div>
-                                        </div>
-                                        <div className="message">
-                                            <h1>Biswarup Kundu</h1>
-                                            <h6>Student</h6>
-                                            <Rating name="read-only" sx={{ mt: 1 }} value={value} readOnly />
-                                            <p>Biswarup Kundu is a passionate and dedicated educator with over 10 years of teaching experience. He believes that education is the key to unlocking the potential in every student and strives to create a positive and inclusive learning environment where all students can thrive.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div className="second">
-                            <div className="first">
+                        {Profile.introVideo.comments.map((data: any, index: any) => (
+                            <div key={index} className="first">
                                 <div className="profilefull">
                                     <div className="profiledetailss">
                                         <p className='ico1'>"</p>
                                         <div className="upper">
                                             <div className="full1">
                                                 <div className="imagee">
-                                                    <img src="https://cdn.dribbble.com/users/1632728/screenshots/4693038/media/c277ac982112db2505e7e2de2d7a2af6.gif" alt="profile pic" />
+                                                    <img src={data.profileImg} alt="profile pic" />
                                                 </div>
                                             </div>
                                             <div className="message">
-                                                <h1>Biswarup Kundu</h1>
-                                                <h6>Student</h6>
-                                                <Rating name="read-only" sx={{ mt: 1 }} value={value} readOnly />
-                                                <p>Biswarup Kundu is a passionate and dedicated educator with over 10 years of teaching experience. He believes that education is the key to unlocking the potential in every student and strives to create a positive and inclusive learning environment where all students can thrive.</p>
+                                                <h1>{data.name}</h1>
+                                                <h6>{data.type}</h6>
+                                                <Rating name="read-only" sx={{ mt: 1 }} value={data.rating} readOnly />
+                                                <p>{data.comment}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div className="third">
-                            <div className="first">
-                                <div className="profilefull">
-                                    <div className="profiledetailss">
-                                        <p className='ico1'>"</p>
-                                        <div className="upper">
-                                            <div className="full1">
-                                                <div className="imagee">
-                                                    <img src="https://cdn.dribbble.com/users/1632728/screenshots/4693038/media/c277ac982112db2505e7e2de2d7a2af6.gif" alt="profile pic" />
-                                                </div>
-                                            </div>
-                                            <div className="message">
-                                                <h1>Biswarup Kundu</h1>
-                                                <h6>Student</h6>
-                                                <Rating name="read-only" sx={{ mt: 1 }} value={value} readOnly />
-                                                <p>Biswarup Kundu is a passionate and dedicated educator with over 10 years of teaching experience. He believes that education is the key to unlocking the potential in every student and strives to create a positive and inclusive learning environment where all students can thrive.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
 
-
+            {/* Courses */}
             <div className="coursediv1">
                 <div className="subdiv">
                     <div className="head">
@@ -271,11 +217,9 @@ const Profile = () => {
                             <SearchOutlinedIcon fontSize='large' className='icon' />
                         </div>
                     </div>
-
                     <Courses />
                 </div>
             </div>
-
         </div>
     )
 }

@@ -382,7 +382,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: fit-content;
+    width: 550px;
     padding: 0;
     margin: 0;
 }
@@ -401,16 +401,19 @@
     right: 0;
     font-size: 60px;
     color: #7B30C0;
+    cursor: pointer;
     background: white;
     border-radius: 50%;
 }
-.subvid .left .upper .editVid{
+
+.subvid .left .upper .editVid {
     position: absolute;
     bottom: 0;
     right: 0;
     font-size: 30px;
-    color:#444CE7;
+    color: #444CE7;
     background: white;
+    cursor: pointer;
     border-radius: 50%;
     padding: .5rem;
 }
@@ -489,6 +492,7 @@
     color: #ffffff;
     background: #7B30C0;
     border-radius: 50%;
+    cursor: pointer;
     padding: .7rem;
 }
 
@@ -498,6 +502,7 @@
     padding: .7rem;
     color: #ffffff;
     background: #6161F1;
+    cursor: pointer;
     border-radius: 50%;
     margin-top: 1.2rem;
 }
@@ -657,25 +662,40 @@
     .profile .profiledetails .upper {
         justify-content: center;
     }
-       
-.profile .profiledetails .ico {
-    right: 1%;
-    top: 0;
-}
+
+    .profile .profiledetails .ico {
+        right: 1%;
+        top: 0;
+    }
 }
 
 @media screen and (max-width:653px) {
-    
-.profile .profiledetails .ico {
-    right: 15%;
-    top: 26%;
-    padding: .5rem;
-}
+
+    .profile .profiledetails .ico {
+        right: 15%;
+        top: 26%;
+        padding: .5rem;
+    }
 }
 
 @media screen and (max-width:500px) {
     .profile .profiledetails .upper {
         padding: 0;
+    }
+
+    .cover .coverImg {
+        width: 380px;
+        opacity: .9;
+    }
+
+    .cover .highlight {
+        z-index: 9999;
+    }
+
+    .profile .profiledetails .ico {
+        right: 3%;
+        top: 26%;
+        padding: 0.5rem;
     }
 
     .profiledetailss .ico1 {
@@ -697,9 +717,11 @@
         justify-content: center;
         align-items: center;
     }
+
     .profiledetailss .upper {
         flex-wrap: wrap;
     }
+
     .top {
         padding: 2rem 0rem 0rem 2rem;
     }
