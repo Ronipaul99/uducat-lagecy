@@ -690,6 +690,7 @@
 
     .cover .highlight {
         z-index: 9999;
+        text-shadow:2px 5px 10px  #ffffff;
     }
 
     .profile .profiledetails .ico {
