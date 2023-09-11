@@ -2,8 +2,10 @@ import React from 'react';
 import './Auth.css';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import { useCookies } from 'react-cookie';
 
 const Auth = () => {
+    const [cookies, setCookie] = useCookies(['UserData']);
     const { register, handleSubmit } = useForm();
 
     const Submit = (data: any) => {
@@ -12,6 +14,7 @@ const Auth = () => {
         axios.post("http://localhost:4001/login", data).then((res) => {
             window.localStorage.setItem("isLoggedin", "true")
             window.location.reload();
+            setCookie('UserData', res.data, { path: 'localhost:3000/' });
         }).catch(() => {
             console.log("Email or Password is incorrect");
         });

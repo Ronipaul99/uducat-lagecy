@@ -19,10 +19,11 @@ import axios from 'axios';
 import { useCookies } from 'react-cookie';
 
 const Profile = () => {
+    const [User, setUser] = useCookies(['UserData']);
     const [cookies, setCookie] = useCookies(['ProfileData']);
     const [profileData, setProfileData] = useState(cookies.ProfileData);
     // Profile data fetching
-    axios.get("http://localhost:4001/getProfile/64f71a5c3b03ff6344a82b43").then((res) => {
+    axios.get(`http://localhost:4001/getProfile/${User.UserData.UID}`).then((res) => {
         setProfileData(res.data);
         setCookie('ProfileData', res.data, { path: 'localhost:3000/' });
     }).catch(() => {
@@ -146,15 +147,15 @@ const Profile = () => {
                 <div className="subvid">
                     <div className="left">
                         <div className="upper">
-                            <p className='time'>15.4</p>
+                            <p className='time'>{Profile.introVideo.duration}</p>
                             <PlayCircleIcon className='play' />
                             <img src={Profile.introVideo.videoPicURL} alt="video" />
                             <EditIcon className='editVid' />
                         </div>
                         <div className="lower">
                             <div className="pie">
-                                <div className="tag1">200</div>
-                                <div className="tag2">100</div>
+                                <div className="tag1">{Profile.introVideo.Likes[0].value}</div>
+                                <div className="tag2">{Profile.introVideo.Likes[1].value}</div>
                                 <PieChart width={400} height={400}>
                                     <Pie
                                         data={Profile.introVideo.Likes}
