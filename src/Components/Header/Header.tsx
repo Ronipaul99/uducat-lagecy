@@ -11,8 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import CancelIcon from '@mui/icons-material/Cancel';
 import MenuIcon from '@mui/icons-material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { useCookies } from 'react-cookie';
 
 const Header = () => {
+    const [User, setUser] = useCookies(['UserData']);
 
     const currencies = [
         {
@@ -74,8 +76,8 @@ const Header = () => {
                         <Avatar className='avtar' sx={{ height: "50px", width: "50px" }}>R</Avatar>
                         <div className="uid">
                             <div className="user">
-                                <h1>Reshab Naskar</h1>
-                                <p>naskarreshab2003@gmail.com</p>
+                                <h1>{User.UserData.first_name} {User.UserData.last_name}</h1>
+                                <p>{User.UserData.email}</p>
                             </div>
                             <KeyboardArrowDownIcon fontSize='medium' />
                         </div>

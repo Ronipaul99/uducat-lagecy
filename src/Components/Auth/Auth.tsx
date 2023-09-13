@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';
 import './Auth.css';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
@@ -9,12 +9,18 @@ const Auth = () => {
     const { register, handleSubmit } = useForm();
 
     const Submit = (data: any) => {
-        console.log(data)
         window.localStorage.setItem("isLoggedin", "false")
         axios.post("http://localhost:4001/login", data).then((res) => {
-            window.localStorage.setItem("isLoggedin", "true")
-            window.location.reload();
             setCookie('UserData', res.data, { path: 'localhost:3000/' });
+            window.location.reload();
+            console.log("success");
+            window.localStorage.setItem("isLoggedin", "true")
+            // JWT Auth
+            // axios.post("http://localhost:4001/welcome", { headers: { 'x-access-token': `${res.data.token}`, 'Content-Type': 'application/json', 'Accept': 'application/json' } }).then((res) => {
+
+            // }).catch(() => {
+            //     console.log("Invalid JWT token");
+            // });
         }).catch(() => {
             console.log("Email or Password is incorrect");
         });

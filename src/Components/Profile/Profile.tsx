@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Profile.css';
 import Rating from '@mui/material/Rating';
 import EditIcon from '@mui/icons-material/Edit';
@@ -23,12 +23,15 @@ const Profile = () => {
     const [cookies, setCookie] = useCookies(['ProfileData']);
     const [profileData, setProfileData] = useState(cookies.ProfileData);
     // Profile data fetching
-    axios.get(`http://localhost:4001/getProfile/${User.UserData.UID}`).then((res) => {
-        setProfileData(res.data);
-        setCookie('ProfileData', res.data, { path: 'localhost:3000/' });
-    }).catch(() => {
-        console.log("Something went wrong!");
-    });
+    useEffect(() => {
+        axios.get(`http://localhost:4001/getProfile/${User.UserData.UID}`).then((res) => {
+            setProfileData(res.data);
+            setCookie('ProfileData', res.data, { path: 'localhost:3000/' });
+        }).catch(() => {
+            console.log("Something went wrong!");
+        });
+    }, [User.UserData.UID, setCookie])
+
     // Interface
     interface PD {
         id: number;
