@@ -15,7 +15,7 @@ const Auth = () => {
             // JWT Auth
             axios.post("http://localhost:4001/welcome", { token: res.data.token }, { headers: { 'x-access-token': `${res.data.token}`, 'Content-Type': 'application/json', 'Accept': 'application/json' } }).then((res) => {
                 window.location.reload();
-                console.log("success");
+                console.log("Successfully verified");
                 window.localStorage.setItem("isLoggedin", "true")
             }).catch(() => {
                 console.log("Invalid JWT token");
