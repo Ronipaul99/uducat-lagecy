@@ -73,7 +73,7 @@ const Header = () => {
                         <HelpOutlineOutlinedIcon fontSize='large' className='icon2' />
                     </div>
                     <div className="useraccount">
-                        <Avatar className='avtar' sx={{ height: "50px", width: "50px" }}>R</Avatar>
+                        <Avatar className='avtar' sx={{ height: "50px", width: "50px" }}>{User.UserData.first_name.slice(0,1)}</Avatar>
                         <div className="uid">
                             <div className="user">
                                 <h1>{User.UserData.first_name} {User.UserData.last_name}</h1>
