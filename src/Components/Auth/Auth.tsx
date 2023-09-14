@@ -12,15 +12,14 @@ const Auth = () => {
         window.localStorage.setItem("isLoggedin", "false")
         axios.post("http://localhost:4001/login", data).then((res) => {
             setCookie('UserData', res.data, { path: 'localhost:3000/' });
-            window.location.reload();
-            console.log("success");
-            window.localStorage.setItem("isLoggedin", "true")
             // JWT Auth
-            // axios.post("http://localhost:4001/welcome", { headers: { 'x-access-token': `${res.data.token}`, 'Content-Type': 'application/json', 'Accept': 'application/json' } }).then((res) => {
-
-            // }).catch(() => {
-            //     console.log("Invalid JWT token");
-            // });
+            axios.post("http://localhost:4001/welcome", { token: res.data.token }).then((res) => {
+                window.location.reload();
+                console.log("JWT verify successfully done!");
+                window.localStorage.setItem("isLoggedin", "true")
+            }).catch(() => {
+                console.log("Invalid JWT token");
+            });
         }).catch(() => {
             console.log("Email or Password is incorrect");
         });
