@@ -1,12 +1,69 @@
 /* override day number color and size */
 .fc-day-number {
-    font-size: 1.5em;
-    color: #5c005c;
-  }
-  
-  /* override day title color and size */
-  .fc-day-header {
-    font-size: 1.5em;
-    color: #00b294;
-  }
-  
+  font-size: 1.5em;
+  color: #5c005c;
+}
+
+/* override day title color and size */
+.fc-day-header {
+  font-size: 1.5em;
+  color: #00b294;
+}
+
+.flx {
+  display: flex;
+  gap: .5rem;
+}
+
+.fm {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.fm1 {
+  border-radius: 15px;
+  padding: .5rem;
+  border: 1px solid #626262;
+}
+
+.t{
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
+}
+.gp{
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.form-control {
+  border-radius: 15px;
+  padding: .5rem;
+  border: 1px solid #626262;
+}
+
+.ftrbtn {
+  padding: .5rem 2rem;
+  border-radius: 20px;
+  background: #7B30C0;
+  border: none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+.ftrbtn1 {
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  border-radius: 15px;
+  border: 1px solid #7B30C0;
+  padding: 0.5rem 2rem;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  background: none;
+  outline: none;
+}

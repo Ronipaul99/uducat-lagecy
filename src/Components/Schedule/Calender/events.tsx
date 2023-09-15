@@ -1,4 +1,24 @@
-const events = [
+interface Event {
+  id: string;
+  title: string;
+  start: string;
+  end?: string;
+  groupId?: string;
+}
+
+function getDate(dayString: string): string {
+  const today = new Date();
+  const year = today.getFullYear().toString();
+  let month = (today.getMonth() + 1).toString();
+
+  if (month.length === 1) {
+    month = "0" + month;
+  }
+
+  return dayString.replace("YEAR", year).replace("MONTH", month);
+}
+
+const events: Event[] = [
   { id: "01", title: "All Day Event", start: getDate("YEAR-MONTH-01") },
   {
     id: "02",
@@ -30,24 +50,11 @@ const events = [
     start: getDate("YEAR-MONTH-18T10:30:00+00:00"),
     end: getDate("YEAR-MONTH-18T12:30:00+00:00")
   },
-
   { id: "07", title: "Lunch", start: getDate("YEAR-MONTH-18T12:00:00+00:00") },
   { id: "08", title: "Birthday Party", start: getDate("YEAR-MONTH-19T07:00:00+00:00") },
   { id: "09", title: "Meeting", start: getDate("YEAR-MONTH-18T14:30:00+00:00") },
   { id: "10", title: "Happy Hour", start: getDate("YEAR-MONTH-18T17:30:00+00:00") },
   { id: "11", title: "Dinner", start: getDate("YEAR-MONTH-18T20:00:00+00:00") }
 ];
-
-function getDate(dayString) {
-  const today = new Date();
-  const year = today.getFullYear().toString();
-  let month = (today.getMonth() + 1).toString();
-
-  if (month.length === 1) {
-    month = "0" + month;
-  }
-
-  return dayString.replace("YEAR", year).replace("MONTH", month);
-}
 
 export default events;

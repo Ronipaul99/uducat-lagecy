@@ -183,35 +183,58 @@ export default function Schedulee(boot) {
           onDelete={state.clickInfo && handleDelete}
           deleteText="Delete"
         >
-          <FormGroup>
-            <Label for="exampleEmail">Title</Label>
+          <div className="gp">
+          <FormGroup className="fm">
+            <Label className="t">Title</Label>
             <Input
               type="text"
               name="title"
-              placeholder="with a placeholder"
+              className="fm1"
+              placeholder="Enter a title..."
               value={title}
               onChange={(e) => setTitle(e.target.value)}
             />
           </FormGroup>
-          <FormGroup>
-            <Label for="exampleEmail">From - End</Label>
+
+          <div className="flx">
+          <FormGroup className="fm">
+            <Label className="t">Start</Label>
             <DateRangePicker
               initialSettings={{
                 locale: {
                   format: "M/DD hh:mm A"
                 },
                 startDate: start,
-                endDate: end,
                 timePicker: true
               }}
               onApply={(event, picker) => {
                 setStart(new Date(picker.startDate));
+              }}
+            >
+              <input className="form-control" type="text" />
+            </DateRangePicker>
+          </FormGroup>
+
+
+          <FormGroup className="fm">
+            <Label className="t">End</Label>
+            <DateRangePicker
+              initialSettings={{
+                locale: {
+                  format: "M/DD hh:mm A"
+                },
+                endDate: end,
+                timePicker: true
+              }}
+              onApply={(event, picker) => {
                 setEnd(new Date(picker.endDate));
               }}
             >
               <input className="form-control" type="text" />
             </DateRangePicker>
           </FormGroup>
+          </div>
+          </div>
         </CustomModal>
 
         <CustomModal
