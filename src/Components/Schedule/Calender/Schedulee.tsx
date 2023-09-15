@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import FullCalendar from "@fullcalendar/react";
+import React, { useState, useRef } from "react";
+import FullCalendar from "@fullcalendar/react"; // Import EventApi
 import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -12,35 +12,37 @@ import CustomModal from "./components/CustomModal";
 import { Box } from "@mui/system";
 import 'react-calendar/dist/Calendar.css';
 
+interface ScheduleProps {
+  Open: boolean; // Define the prop type
+}
 
+interface ModalState {
+  selectInfo?: any;
+  clickInfo?: any;
+  state?: string;
+  checkInfo?: any;
+}
 
-export default function Schedulee(boot) {
-
-
+const Schedulee: React.FC<ScheduleProps> = ({Open}) => {
   const [weekendsVisible, setWeekendsVisible] = useState(true);
   const [currentEvents, setCurrentEvents] = useState(events);
   const [modal, setModal] = useState(false);
-  
-  // useEffect(() => {
-  //   setModal(boot);
-  // });
-
-  // console.log(model)
   const [confirmModal, setConfirmModal] = useState(false);
-  const calendarRef = useRef(null);
-  const [title, setTitle] = useState("");
-  const [start, setStart] = useState(new Date());
-  const [end, setEnd] = useState(new Date());
+  const calendarRef = useRef<any | null>(null);
+  const [title, setTitle] = useState<string>("");
+  const [start, setStart] = useState<Date>(new Date());
+  const [end, setEnd] = useState<Date>(new Date());
 
   const handleCloseModal = () => {
     handleClose();
     setModal(false);
   };
 
-  function handleDateClick(arg) {
+  const handleDateClick = (arg: any) => {
+    // Implement your logic here
+  };
 
-  }
-  function handleDateSelect(selectInfo) {
+  const handleDateSelect = (selectInfo: any) => {
     if (
       selectInfo.view.type === "timeGridWeek" ||
       selectInfo.view.type === "timeGridDay" ||
@@ -53,8 +55,9 @@ export default function Schedulee(boot) {
       setEnd(selectInfo.end);
       setModal(true);
     }
-  }
-  function renderEventContent(eventInfo) {
+  };
+
+  const renderEventContent = (eventInfo: any) => {
     return (
       <Box>
         <i
@@ -68,35 +71,41 @@ export default function Schedulee(boot) {
         </i>
       </Box>
     );
-  }
-  function handleEventClick(clickInfo) {
+  };
+
+  const handleEventClick = (clickInfo: any) => {
     setState({ clickInfo, state: "update" });
     setTitle(clickInfo.event.title);
     setStart(clickInfo.event.start);
     setEnd(clickInfo.event.end);
 
     setModal(true);
-  }
-  function handleEvents(events) {
+  };
+
+  const handleEvents = (events: any) => {
     setCurrentEvents(events);
-  }
-  function handleEventDrop(checkInfo) {
+  };
+
+  const handleEventDrop = (checkInfo: any) => {
     setState({ checkInfo, state: "drop" });
     setConfirmModal(true);
-  }
-  function handleEventResize(checkInfo) {
+  };
+
+  const handleEventResize = (checkInfo: any) => {
     setState({ checkInfo, state: "resize" });
     setConfirmModal(true);
-  }
-  function handleEdit() {
-    state.clickInfo.event.setStart(start);
-    state.clickInfo.event.setEnd(end);
-    state.clickInfo.event.mutate({
+  };
+
+  const handleEdit = () => {
+    state.clickInfo?.event?.setStart(start);
+    state.clickInfo?.event?.setEnd(end);
+    state.clickInfo?.event?.mutate({
       standardProps: { title }
     });
     handleClose();
-  }
-  function handleSubmit() {
+  };
+
+  const handleSubmit = () => {
     const newEvent = {
       id: nanoid(),
       title,
@@ -105,24 +114,26 @@ export default function Schedulee(boot) {
       allDay: state.selectInfo?.allDay || false
     };
 
-    let calendarApi = calendarRef.current.getApi();
+    let calendarApi = calendarRef.current?.getApi();
 
-    calendarApi.addEvent(newEvent);
+    calendarApi?.addEvent(newEvent);
     handleClose();
-  }
-  function handleDelete() {
-    state.clickInfo.event.remove();
+  };
+
+  const handleDelete = () => {
+    state.clickInfo?.event?.remove();
     handleClose();
-  }
-  function handleClose() {
+  };
+
+  const handleClose = () => {
     setTitle("");
     setStart(new Date());
     setEnd(new Date());
     setState({});
     setModal(false);
-  }
-  const [state, setState] = useState({});
+  };
 
+  const [state, setState] = useState<ModalState>({});
 
   return (
     <div>
@@ -150,29 +161,25 @@ export default function Schedulee(boot) {
             dayMaxEvents={true}
             weekends={weekendsVisible}
             initialEvents={currentEvents}
-            // alternatively, use the `events` setting to fetch from a feed
             select={handleDateSelect}
-            eventContent={renderEventContent} // custom render function
+            eventContent={renderEventContent}
             eventClick={handleEventClick}
             eventsSet={() => handleEvents(events)}
             eventDrop={handleEventDrop}
             eventResize={handleEventResize}
-            //
             dateClick={handleDateClick}
-            eventAdd={(e) => {
+            eventAdd={(e: any) => {
               console.log("eventAdd", e);
             }}
-            eventChange={(e) => {
+            eventChange={(e: any) => {
               console.log("eventChange", e);
             }}
-            eventRemove={(e) => {
+            eventRemove={(e: any) => {
               console.log("eventRemove", e);
             }}
           />
         </div>
 
-
-        {/* POP-up Form */}
         <CustomModal
           title={state.state === "update" ? "Update Event" : "Add Event"}
           isOpen={modal}
@@ -184,56 +191,55 @@ export default function Schedulee(boot) {
           deleteText="Delete"
         >
           <div className="gp">
-          <FormGroup className="fm">
-            <Label className="t">Title</Label>
-            <Input
-              type="text"
-              name="title"
-              className="fm1"
-              placeholder="Enter a title..."
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </FormGroup>
+            <FormGroup className="fm">
+              <Label className="t">Title</Label>
+              <Input
+                type="text"
+                name="title"
+                className="fm1"
+                placeholder="Enter a title..."
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </FormGroup>
 
-          <div className="flx">
-          <FormGroup className="fm">
-            <Label className="t">Start</Label>
-            <DateRangePicker
-              initialSettings={{
-                locale: {
-                  format: "M/DD hh:mm A"
-                },
-                startDate: start,
-                timePicker: true
-              }}
-              onApply={(event, picker) => {
-                setStart(new Date(picker.startDate));
-              }}
-            >
-              <input className="form-control" type="text" />
-            </DateRangePicker>
-          </FormGroup>
+            <div className="flx">
+              <FormGroup className="fm">
+                <Label className="t">Start</Label>
+                <DateRangePicker
+                  initialSettings={{
+                    locale: {
+                      format: "M/DD hh:mm A"
+                    },
+                    startDate: start,
+                    timePicker: true
+                  }}
+                  onApply={(event, picker) => {
+                    setStart(new Date(picker.startDate));
+                  }}
+                >
+                  <input className="form-control" type="text" />
+                </DateRangePicker>
+              </FormGroup>
 
-
-          <FormGroup className="fm">
-            <Label className="t">End</Label>
-            <DateRangePicker
-              initialSettings={{
-                locale: {
-                  format: "M/DD hh:mm A"
-                },
-                endDate: end,
-                timePicker: true
-              }}
-              onApply={(event, picker) => {
-                setEnd(new Date(picker.endDate));
-              }}
-            >
-              <input className="form-control" type="text" />
-            </DateRangePicker>
-          </FormGroup>
-          </div>
+              <FormGroup className="fm">
+                <Label className="t">End</Label>
+                <DateRangePicker
+                  initialSettings={{
+                    locale: {
+                      format: "M/DD hh:mm A"
+                    },
+                    endDate: end,
+                    timePicker: true
+                  }}
+                  onApply={(event, picker) => {
+                    setEnd(new Date(picker.endDate));
+                  }}
+                >
+                  <input className="form-control" type="text" />
+                </DateRangePicker>
+              </FormGroup>
+            </div>
           </div>
         </CustomModal>
 
@@ -241,11 +247,11 @@ export default function Schedulee(boot) {
           title={state.state === "resize" ? "Resize Event" : "Drop Event"}
           isOpen={confirmModal}
           toggle={() => {
-            state.checkInfo.revert();
+            state.checkInfo?.revert();
             setConfirmModal(false);
           }}
           onCancel={() => {
-            state.checkInfo.revert();
+            state.checkInfo?.revert();
             setConfirmModal(false);
           }}
           cancelText="Cancel"
@@ -258,3 +264,5 @@ export default function Schedulee(boot) {
     </div>
   );
 };
+
+export default Schedulee;

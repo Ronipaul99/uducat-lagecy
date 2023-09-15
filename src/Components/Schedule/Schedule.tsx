@@ -11,7 +11,7 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import AddIcon from '@mui/icons-material/Add';
 import Class from '../DummyData/Class';
-import Schedulee from './Calender/Schedule.js';
+import Schedulee from './Calender/Schedulee';
 
 
 const date1: Date = new Date()
@@ -34,7 +34,7 @@ const Schedule = () => {
   const [time, setTime] = useState('');
   const [classData, setClassData] = useState(initial);
   const [tab, setTab] = useState(true);
-  const [val,setVal] = useState(false);
+  const [isOpn,setIsOpn] = useState(false);
   // console.log(val)
 
 
@@ -147,14 +147,14 @@ const Schedule = () => {
 
 
                       <div className="button">
-                        <button  onClick={() => setVal(true)}>Add event<AddIcon className='icon' /></button>
+                        <button  onClick={() => setIsOpn(true)}>Add event<AddIcon className='icon' /></button>
                       </div>
                     </div>
                   </div>
 
 
                   <div className="calender2">
-                    <Schedulee boot={val}/>
+                    <Schedulee Open={isOpn}/>
                   </div>
                 </div>
               </div>
