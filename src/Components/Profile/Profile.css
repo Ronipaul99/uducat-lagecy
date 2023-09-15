@@ -512,6 +512,8 @@
 .subvid .right {
     display: flex;
     flex-direction: column;
+    height: 652px;
+    overflow: auto;
     justify-content: space-between;
     align-items: center;
     background: white;
@@ -578,6 +580,7 @@
 .message p {
     font-size: 13px;
     color: black;
+    text-align: justify;
     margin-top: .2rem;
 }
 
