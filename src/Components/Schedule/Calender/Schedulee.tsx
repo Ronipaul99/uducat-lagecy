@@ -4,12 +4,10 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { nanoid } from "nanoid";
-import { FormGroup, Label, Input } from "reactstrap";
 import DateRangePicker from "react-bootstrap-daterangepicker";
 import "./custom.css";
 import events from "./events";
 import CustomModal from "./components/CustomModal";
-import { Box } from "@mui/system";
 import 'react-calendar/dist/Calendar.css';
 
 interface ScheduleProps {
@@ -23,7 +21,7 @@ interface ModalState {
   checkInfo?: any;
 }
 
-const Schedulee: React.FC<ScheduleProps> = ({Open}) => {
+const Schedulee: React.FC<ScheduleProps> = ({ Open }) => {
   const [weekendsVisible, setWeekendsVisible] = useState(true);
   const [currentEvents, setCurrentEvents] = useState(events);
   const [modal, setModal] = useState(false);
@@ -59,7 +57,7 @@ const Schedulee: React.FC<ScheduleProps> = ({Open}) => {
 
   const renderEventContent = (eventInfo: any) => {
     return (
-      <Box>
+      <div >
         <i
           style={{
             whiteSpace: "nowrap",
@@ -69,7 +67,7 @@ const Schedulee: React.FC<ScheduleProps> = ({Open}) => {
         >
           {eventInfo.event.title}
         </i>
-      </Box>
+      </div>
     );
   };
 
@@ -136,131 +134,110 @@ const Schedulee: React.FC<ScheduleProps> = ({Open}) => {
   const [state, setState] = useState<ModalState>({});
 
   return (
-    <div>
-      <div className="App" style={{ marginTop: "20px" }}>
-        <div>
-          <FullCalendar
-            ref={calendarRef}
-            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-            headerToolbar={{
-              left: "prev,today,next",
-              center: "title",
-              right: "dayGridMonth,timeGridWeek,timeGridDay"
-            }}
-            buttonText={{
-              today: "current",
-              month: "month",
-              week: "week",
-              day: "day",
-              list: "list"
-            }}
-            initialView="timeGridDay"
-            editable={true}
-            selectable={true}
-            selectMirror={true}
-            dayMaxEvents={true}
-            weekends={weekendsVisible}
-            initialEvents={currentEvents}
-            select={handleDateSelect}
-            eventContent={renderEventContent}
-            eventClick={handleEventClick}
-            eventsSet={() => handleEvents(events)}
-            eventDrop={handleEventDrop}
-            eventResize={handleEventResize}
-            dateClick={handleDateClick}
-            eventAdd={(e: any) => {
-              console.log("eventAdd", e);
-            }}
-            eventChange={(e: any) => {
-              console.log("eventChange", e);
-            }}
-            eventRemove={(e: any) => {
-              console.log("eventRemove", e);
-            }}
-          />
-        </div>
+    <div style={{ marginTop: "20px" }}>
+      <FullCalendar
+        ref={calendarRef}
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+        headerToolbar={{
+          left: "prev,today,next",
+          center: "title",
+          right: "dayGridMonth,timeGridWeek,timeGridDay"
+        }}
+        buttonText={{
+          today: "current",
+          month: "month",
+          week: "week",
+          day: "day",
+          list: "list"
+        }}
+        initialView="timeGridDay"
+        editable={true}
+        selectable={true}
+        selectMirror={true}
+        dayMaxEvents={true}
+        weekends={weekendsVisible}
+        initialEvents={currentEvents}
+        select={handleDateSelect}
+        eventContent={renderEventContent}
+        eventClick={handleEventClick}
+        eventsSet={() => handleEvents(events)}
+        eventDrop={handleEventDrop}
+        eventResize={handleEventResize}
+        dateClick={handleDateClick}
+        eventAdd={(e: any) => {
+          console.log("eventAdd", e);
+        }}
+        eventChange={(e: any) => {
+          console.log("eventChange", e);
+        }}
+        eventRemove={(e: any) => {
+          console.log("eventRemove", e);
+        }}
+      />
+      <CustomModal
+        title={state.state === "update" ? "Update Event" : "Add Event"}
+        isOpen={modal}
+        toggle={handleCloseModal}
+        onCancel={handleCloseModal}
+        onSubmit={state.clickInfo ? handleEdit : handleSubmit}
+        submitText={state.clickInfo ? "Update" : "Save"}
+        onDelete={state.clickInfo && handleDelete}
+        deleteText="Delete"
+      >
+        <div className="gp">
+          <div className="fm">
+            <p className="t">Title</p>
+            <input
+              type="text"
+              name="title"
+              className="fm1"
+              placeholder="Enter a title..."
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
 
-        <CustomModal
-          title={state.state === "update" ? "Update Event" : "Add Event"}
-          isOpen={modal}
-          toggle={handleCloseModal}
-          onCancel={handleCloseModal}
-          onSubmit={state.clickInfo ? handleEdit : handleSubmit}
-          submitText={state.clickInfo ? "Update" : "Save"}
-          onDelete={state.clickInfo && handleDelete}
-          deleteText="Delete"
-        >
-          <div className="gp">
-            <FormGroup className="fm">
-              <Label className="t">Title</Label>
-              <Input
-                type="text"
-                name="title"
-                className="fm1"
-                placeholder="Enter a title..."
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </FormGroup>
-
-            <div className="flx">
-              <FormGroup className="fm">
-                <Label className="t">Start</Label>
-                <DateRangePicker
-                  initialSettings={{
-                    locale: {
-                      format: "M/DD hh:mm A"
-                    },
-                    startDate: start,
-                    timePicker: true
-                  }}
-                  onApply={(event, picker) => {
-                    setStart(new Date(picker.startDate));
-                  }}
-                >
-                  <input className="form-control" type="text" />
-                </DateRangePicker>
-              </FormGroup>
-
-              <FormGroup className="fm">
-                <Label className="t">End</Label>
-                <DateRangePicker
-                  initialSettings={{
-                    locale: {
-                      format: "M/DD hh:mm A"
-                    },
-                    endDate: end,
-                    timePicker: true
-                  }}
-                  onApply={(event, picker) => {
-                    setEnd(new Date(picker.endDate));
-                  }}
-                >
-                  <input className="form-control" type="text" />
-                </DateRangePicker>
-              </FormGroup>
+          <div className="flx">
+            <div className="fm">
+              <p className="t">Start - End</p>
+              <DateRangePicker
+                initialSettings={{
+                  locale: {
+                    format: "M/DD hh:mm A"
+                  },
+                  startDate: start,
+                  endDate: end,
+                  timePicker: true
+                }}
+                onApply={(event, picker) => {
+                  setStart(new Date(picker.startDate));
+                  setEnd(new Date(picker.endDate));
+                }}
+              >
+                <input className="form-control1" type="text" />
+              </DateRangePicker>
             </div>
           </div>
-        </CustomModal>
+        </div>
+      </CustomModal>
 
-        <CustomModal
-          title={state.state === "resize" ? "Resize Event" : "Drop Event"}
-          isOpen={confirmModal}
-          toggle={() => {
-            state.checkInfo?.revert();
-            setConfirmModal(false);
-          }}
-          onCancel={() => {
-            state.checkInfo?.revert();
-            setConfirmModal(false);
-          }}
-          cancelText="Cancel"
-          onSubmit={() => setConfirmModal(false)}
-          submitText={"OK"}
-        >
-          Do you want to {state.state} this event?
-        </CustomModal>
-      </div>
+      <CustomModal
+        title={state.state === "resize" ? "Resize Event" : "Drop Event"}
+        isOpen={confirmModal}
+        toggle={() => {
+          state.checkInfo?.revert();
+          setConfirmModal(false);
+        }}
+        onCancel={() => {
+          state.checkInfo?.revert();
+          setConfirmModal(false);
+        }}
+        cancelText="Cancel"
+        onSubmit={() => setConfirmModal(false)}
+        submitText={"OK"}
+      >
+        Do you want to {state.state} this event?
+      </CustomModal>
     </div>
   );
 };

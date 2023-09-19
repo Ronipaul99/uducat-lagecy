@@ -34,9 +34,7 @@ const Schedule = () => {
   const [time, setTime] = useState('');
   const [classData, setClassData] = useState(initial);
   const [tab, setTab] = useState(true);
-  const [isOpn,setIsOpn] = useState(false);
-  // console.log(val)
-
+  const [isOpn, setIsOpn] = useState(false);
 
   useEffect(() => {
     const myInterval = setInterval(() => {
@@ -52,6 +50,10 @@ const Schedule = () => {
     month: 'long',
   });
 
+
+  const popup = () => {
+    setIsOpn(true);
+  };
 
   return (
     <div className='schedule'>
@@ -147,14 +149,14 @@ const Schedule = () => {
 
 
                       <div className="button">
-                        <button  onClick={() => setIsOpn(true)}>Add event<AddIcon className='icon' /></button>
+                        <button onClick={popup}>Add event<AddIcon className='icon' /></button>
                       </div>
                     </div>
                   </div>
 
 
                   <div className="calender2">
-                    <Schedulee Open={isOpn}/>
+                    <Schedulee Open={isOpn} />
                   </div>
                 </div>
               </div>

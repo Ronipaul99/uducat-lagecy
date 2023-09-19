@@ -37,8 +37,9 @@
   gap: .7rem;
 }
 
-.form-control {
+.form-control1 {
   border-radius: 15px;
+  width: max-content;
   padding: .5rem;
   border: 1px solid #626262;
 }
