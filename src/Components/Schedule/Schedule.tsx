@@ -44,8 +44,7 @@ const Schedule = () => {
     }
   }, []);
 
-  const current = new Date();
-  const b = current.toLocaleString('en-US', {
+  const b = date1.toLocaleString('en-US', {
     month: 'short',
   });
 
@@ -143,7 +142,7 @@ const Schedule = () => {
                     </div>
                     <div className="times">
                       <div className="time">
-                        <p> {current.getFullYear()}</p><small className='colorMonth'>{b}</small><small className='colorMonth'>{current.getDate()}</small>
+                        <p> {date1.getFullYear()}</p><small className='colorMonth'>{b}</small><small className='colorMonth'>{date1.getDate()}</small>
                         <p>{time}</p>
                       </div>
 
