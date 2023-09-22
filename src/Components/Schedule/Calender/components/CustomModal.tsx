@@ -28,30 +28,6 @@ const CustomModal: React.FC<CustomModalProps> = ({
   children
 }: CustomModalProps) => {
   return (
-    <>
-      {/* <Modal style={{ marginTop: "90px" }} isOpen={isOpen} toggle={toggle}>
-        <ModalHeader toggle={toggle}>{title}</ModalHeader>
-        <ModalBody>{children}</ModalBody>
-        <ModalFooter>
-          {onCancel && (
-            <Button color="secondary" onClick={onCancel}>
-              {cancelText || "Cancel"}
-            </Button>
-          )}
-          {onDelete && (
-            <Button color="primary" onClick={onDelete}>
-              {deleteText || "Delete"}
-            </Button>
-          )}
-          {onSubmit && (
-            <Button color="primary" onClick={onSubmit}>
-              {submitText || "Submit"}
-            </Button>
-          )}
-        </ModalFooter>
-      </Modal> */}
-
-
       <Dialog
         open={isOpen}
         onClose={toggle}
@@ -84,7 +60,6 @@ const CustomModal: React.FC<CustomModalProps> = ({
           )}
         </DialogActions>
       </Dialog>
-    </>
   );
 };
 
