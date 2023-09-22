@@ -51,9 +51,6 @@ const Schedule = () => {
 
   const childRef = useRef<any>(null);
 
-
-
-
   const popup = () => {
     childRef.current.Open();
   };
