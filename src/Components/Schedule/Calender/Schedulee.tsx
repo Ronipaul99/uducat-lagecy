@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useImperativeHandle } from "react";
 import FullCalendar from "@fullcalendar/react"; // Import EventApi
 import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
@@ -9,9 +9,10 @@ import "./custom.css";
 import events from "./events";
 import CustomModal from "./components/CustomModal";
 import 'react-calendar/dist/Calendar.css';
+import 'bootstrap-daterangepicker/daterangepicker.css';
 
 interface ScheduleProps {
-  Open: boolean; // Define the prop type
+  ModalFunction: any; // Define the prop type
 }
 
 interface ModalState {
@@ -21,7 +22,7 @@ interface ModalState {
   checkInfo?: any;
 }
 
-const Schedulee: React.FC<ScheduleProps> = ({ Open }) => {
+const Schedulee: React.FC<ScheduleProps> = ({ ModalFunction }) => {
   const [weekendsVisible, setWeekendsVisible] = useState(true);
   const [currentEvents, setCurrentEvents] = useState(events);
   const [modal, setModal] = useState(false);
@@ -35,6 +36,14 @@ const Schedulee: React.FC<ScheduleProps> = ({ Open }) => {
     handleClose();
     setModal(false);
   };
+
+  // parent modal open function call
+  useImperativeHandle(ModalFunction, () => ({
+    Open() {
+      setModal(true)
+    }
+  }));
+
 
   const handleDateClick = (arg: any) => {
     // Implement your logic here

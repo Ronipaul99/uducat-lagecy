@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Schedule.css';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -34,7 +34,6 @@ const Schedule = () => {
   const [time, setTime] = useState('');
   const [classData, setClassData] = useState(initial);
   const [tab, setTab] = useState(true);
-  const [isOpn, setIsOpn] = useState(false);
 
   useEffect(() => {
     const myInterval = setInterval(() => {
@@ -50,9 +49,13 @@ const Schedule = () => {
     month: 'long',
   });
 
+  const childRef = useRef<any>(null);
+
+
+
 
   const popup = () => {
-    setIsOpn(true);
+    childRef.current.Open();
   };
 
   return (
@@ -156,7 +159,7 @@ const Schedule = () => {
 
 
                   <div className="calender2">
-                    <Schedulee Open={isOpn} />
+                    <Schedulee ModalFunction={childRef} />
                   </div>
                 </div>
               </div>
