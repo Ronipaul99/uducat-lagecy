@@ -312,6 +312,7 @@
     color: white;
     border-radius: 20px;
     padding: .5rem 1.5rem;
+    cursor: pointer;
     border: none;
 }
 
