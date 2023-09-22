@@ -46,7 +46,7 @@ const Schedule = () => {
 
   const current = new Date();
   const b = current.toLocaleString('en-US', {
-    month: 'long',
+    month: 'short',
   });
 
   const childRef = useRef<any>(null);
