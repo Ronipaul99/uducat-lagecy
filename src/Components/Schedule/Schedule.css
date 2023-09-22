@@ -135,10 +135,8 @@
     font-weight: bold;
     font-size: 17px;
     height: 50px;
-}
-
-.tabfit button:active {
-    background: rgb(255, 255, 255);
+    outline: none;
+    cursor: pointer;
 }
 
 .tabfit button:focus {
@@ -395,6 +393,7 @@
     color: black;
     border-radius: 15px;
     border: 1px solid #7B30C0;
+    cursor: pointer;
     padding: .5rem 2rem;
     display: flex;
     justify-content: center;
